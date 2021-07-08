@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>modification testing</description>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.31",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "05de8c2851074bd38d7de827678ae78b": {
+          "id": "05de8c2851074bd38d7de827678ae78b",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Welcome to the modify topic"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "parameters": [
+            {
+              "name": "short description",
+              "value": "A / B / C",
+              "checked": true,
+              "id": "cab6bea3348d4427a0ff1fa0bf73421e",
+              "disabled": false,
+              "referenced": true
+            },
+            {
+              "name": "Intereaction sysID",
+              "value": "",
+              "id": "204678c5f1234e0183ad20784728db79",
+              "checked": true,
+              "referenced": true,
+              "disabled": false
+            }
+          ],
+          "variableIds": [
+            "cab6bea3348d4427a0ff1fa0bf73421e",
+            "204678c5f1234e0183ad20784728db79"
+          ]
+        },
+        "05252331693c419fb1b40508bcc5c416": {
+          "id": "05252331693c419fb1b40508bcc5c416",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "fcb11f16c51f47a38f2a92f3e79e7a6c": {
+          "id": "fcb11f16c51f47a38f2a92f3e79e7a6c",
+          "stepType": "CrudAction",
+          "name": "update short",
+          "template": "short_description={{vaInputs.short_description}}",
+          "mode": "update",
+          "record": "6de251caaea44463ad12d6eb74d5c790",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "e3fb49668d034623bb7c08d035eacbac"
+        },
+        "2970b0d0575047fa85dfc9c3d0089294": {
+          "id": "2970b0d0575047fa85dfc9c3d0089294",
+          "stepType": "LookupRecord",
+          "name": "int lookup",
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_id={{vaInputs.intereaction_sysid}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "6de251caaea44463ad12d6eb74d5c790"
+        }
+      },
+      "edges": [
+        {
+          "id": "34ff8bad3d464c7b8ae8f0a08a3a0c62",
+          "edgeType": "Edge",
+          "source": "2970b0d0575047fa85dfc9c3d0089294",
+          "target": "fcb11f16c51f47a38f2a92f3e79e7a6c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a8fe26d7b6314acfa76cd4c6c2ea7e1d",
+          "edgeType": "Edge",
+          "source": "fcb11f16c51f47a38f2a92f3e79e7a6c",
+          "target": "05252331693c419fb1b40508bcc5c416",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d10e90d9ede744de8b4b982dc47048b8",
+          "edgeType": "Edge",
+          "source": "05de8c2851074bd38d7de827678ae78b",
+          "target": "2970b0d0575047fa85dfc9c3d0089294",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "e3fb49668d034623bb7c08d035eacbac": {
+      "id": "e3fb49668d034623bb7c08d035eacbac",
+      "name": "update_short",
+      "label": "Update Short",
+      "varType": "reference",
+      "table": "interaction",
+      "inactive": true,
+      "category": "vaInputs"
+    },
+    "6de251caaea44463ad12d6eb74d5c790": {
+      "id": "6de251caaea44463ad12d6eb74d5c790",
+      "name": "int_lookup",
+      "label": "Int Lookup",
+      "varType": "reference",
+      "table": "interaction",
+      "category": "vaInputs"
+    },
+    "cab6bea3348d4427a0ff1fa0bf73421e": {
+      "id": "cab6bea3348d4427a0ff1fa0bf73421e",
+      "name": "short_description",
+      "label": "Short Description",
+      "defaultValue": "A / B / C",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "204678c5f1234e0183ad20784728db79": {
+      "id": "204678c5f1234e0183ad20784728db79",
+      "name": "intereaction_sysid",
+      "label": "Intereaction SysID",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    }
+  }
+}</graph>
+        <key_phrases/>
+        <library>true</library>
+        <live_agent>false</live_agent>
+        <name>set interaction description</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-29 16:55:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8aa4f5ad2f013010c2c7837cf699b6ec</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>set interaction description</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_8aa4f5ad2f013010c2c7837cf699b6ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-30 13:29:10</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>TOPIC_BLOCK</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=8aa4f5ad2f013010c2c7837cf699b6ec"/>
+</record_update>

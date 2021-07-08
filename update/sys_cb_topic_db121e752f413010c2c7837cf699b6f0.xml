@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description/>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.31",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "9dcad23df27240a48948e4be8fabcc88": {
+          "id": "9dcad23df27240a48948e4be8fabcc88",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          },
+          "parameters": [
+            {
+              "name": "interaction sysID",
+              "value": "",
+              "checked": true,
+              "id": "b54651ebf86f4758aa48f00403fd0b69",
+              "disabled": false,
+              "referenced": false
+            },
+            {
+              "name": "tag",
+              "value": "",
+              "id": "f424427fa4a54d3fb7acc4cedd5ff03c",
+              "checked": true,
+              "referenced": false,
+              "disabled": false
+            }
+          ],
+          "variableIds": [
+            "b54651ebf86f4758aa48f00403fd0b69",
+            "f424427fa4a54d3fb7acc4cedd5ff03c"
+          ]
+        },
+        "8a02bdf9ed8247b9aaafdede709afa09": {
+          "id": "8a02bdf9ed8247b9aaafdede709afa09",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "202dfaa16cdb4b4b85ef14450e52d2cd": {
+          "id": "202dfaa16cdb4b4b85ef14450e52d2cd",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "7d5dc514b6e9419fa806f88577e093b3": {
+          "id": "7d5dc514b6e9419fa806f88577e093b3",
+          "stepType": "LookupRecord",
+          "name": "LOOK UP INT",
+          "condition": {
+            "mode": "glide_query",
+            "value": "sys_id={{vaInputs.interaction_sysid}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "cef295ba89d04e32bf72a3d3df8c4a30"
+        },
+        "d23a7572098b4f1a9b5595b9273cab80": {
+          "id": "d23a7572098b4f1a9b5595b9273cab80",
+          "stepType": "LookupRecord",
+          "name": "look up user",
+          "condition": {
+            "mode": "glide_query",
+            "value": "user_name={{vaInputs.user.user_name}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "8aa61dcde0a543fab202885c895c7669"
+        },
+        "bd4a7c2fdaef43988bbe011fb5d68860": {
+          "id": "bd4a7c2fdaef43988bbe011fb5d68860",
+          "stepType": "CrudAction",
+          "name": "set work",
+          "template": "work_notes={{vaInputs.tag}}",
+          "mode": "update",
+          "record": "cef295ba89d04e32bf72a3d3df8c4a30",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "7c94e04abc664359ae6c6653b345e420"
+        }
+      },
+      "edges": [
+        {
+          "id": "6a9783c35edc4d21814101522cec29b2",
+          "edgeType": "Branch",
+          "source": "202dfaa16cdb4b4b85ef14450e52d2cd",
+          "target": "8a02bdf9ed8247b9aaafdede709afa09",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.interaction_sysidISEMPTY^vaInputs.ORtagISEMPTY",
+            "mode": "query"
+          },
+          "label": "not provided id"
+        },
+        {
+          "id": "f69702e352584152af2c654a0530e6de",
+          "edgeType": "Edge",
+          "source": "9dcad23df27240a48948e4be8fabcc88",
+          "target": "202dfaa16cdb4b4b85ef14450e52d2cd",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f9a961a4bbc1460d9b509a738bcb3911",
+          "edgeType": "Branch",
+          "source": "202dfaa16cdb4b4b85ef14450e52d2cd",
+          "target": "7d5dc514b6e9419fa806f88577e093b3",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.interaction_sysidISNOTEMPTY^vaInputs.ORtagISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "provided id"
+        },
+        {
+          "id": "aa9c1e46fc7c414883e6a81931dd86ee",
+          "edgeType": "Edge",
+          "source": "7d5dc514b6e9419fa806f88577e093b3",
+          "target": "d23a7572098b4f1a9b5595b9273cab80",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "10454f24cba44c568b6d97ee0efcc269",
+          "edgeType": "Edge",
+          "source": "d23a7572098b4f1a9b5595b9273cab80",
+          "target": "bd4a7c2fdaef43988bbe011fb5d68860",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cebd067694644102ac6b1b78e5f6a21b",
+          "edgeType": "Edge",
+          "source": "bd4a7c2fdaef43988bbe011fb5d68860",
+          "target": "8a02bdf9ed8247b9aaafdede709afa09",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "cef295ba89d04e32bf72a3d3df8c4a30": {
+      "id": "cef295ba89d04e32bf72a3d3df8c4a30",
+      "name": "look_up_int",
+      "label": "LOOK UP INT",
+      "varType": "reference",
+      "table": "interaction",
+      "category": "vaInputs"
+    },
+    "8aa61dcde0a543fab202885c895c7669": {
+      "id": "8aa61dcde0a543fab202885c895c7669",
+      "name": "look_up_user",
+      "label": "Look Up User",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "7c94e04abc664359ae6c6653b345e420": {
+      "id": "7c94e04abc664359ae6c6653b345e420",
+      "name": "set_work",
+      "label": "Set Work",
+      "varType": "reference",
+      "table": "",
+      "inactive": true,
+      "category": "vaInputs"
+    },
+    "b54651ebf86f4758aa48f00403fd0b69": {
+      "id": "b54651ebf86f4758aa48f00403fd0b69",
+      "name": "interaction_sysid",
+      "label": "Interaction SysID",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "f424427fa4a54d3fb7acc4cedd5ff03c": {
+      "id": "f424427fa4a54d3fb7acc4cedd5ff03c",
+      "name": "tag",
+      "label": "Tag",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    }
+  }
+}</graph>
+        <key_phrases/>
+        <library>true</library>
+        <live_agent>false</live_agent>
+        <name>set interaction tag</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-30 13:42:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>db121e752f413010c2c7837cf699b6f0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>set interaction tag</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_db121e752f413010c2c7837cf699b6f0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-30 13:48:26</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>TOPIC_BLOCK</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=db121e752f413010c2c7837cf699b6f0"/>
+</record_update>

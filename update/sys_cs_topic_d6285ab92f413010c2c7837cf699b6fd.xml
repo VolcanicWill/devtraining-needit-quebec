@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic">
+    <sys_cs_topic action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability>true</applicability>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <cb_topic_id display_value="hello">d1189e352f413010c2c7837cf699b663</cb_topic_id>
+        <channels/>
+        <definition>{"id":"d1189e352f413010c2c7837cf699b663","name":"hello","system_topic":false,"vendor_id":"c2f0b8f187033200246ddd4c97cb0bb9","description":"hello","applicability":"true","categories":[],"key_phrases":["hello"],"variables":[{"name":"__segment_trigger_d209ba02c1054e29935d6693f6952c3a_done","type":"java.lang.Object","init_value":"false"},{"name":"previous_graph_node","type":"java.lang.Object"}],"fields":[{"type":"Reference","table_name":"sys_user","name":"user","unique":false,"key_phrases":[],"mask_type":"NONE","static_enum_list":[]},{"type":"Boolean","name":"RootDecisionBranch_da285ab97d4130104b5c57f2e8c092fc","unique":false,"default_value":"true","key_phrases":[],"mask_type":"NONE","static_enum_list":[]},{"type":"String","name":"__silent_StartGoal_fa4353dd22444a34aac6ad42a6b281c9","unique":false,"key_phrases":[],"mask_type":"NONE","static_enum_list":[],"encrypt_if_secure":true},{"type":"String","name":"__silent_Decision_RootDecision_5a285ab98f413010eb08859b81dba6fc","unique":false,"key_phrases":[],"mask_type":"NONE","static_enum_list":[],"encrypt_if_secure":true},{"type":"String","name":"__silent_TerminateGoal_d845efab9a29473085fbd0d2293c8160","unique":false,"key_phrases":[],"mask_type":"NONE","static_enum_list":[],"encrypt_if_secure":true},{"type":"String","name":"__silent_OutputPrompt_e93b330f4e6342f5bf0fb84f1306fe4f","unique":false,"key_phrases":[],"mask_type":"NONE","static_enum_list":[],"encrypt_if_secure":true},{"type":"String","name":"__silent_Branch_RootDecisionBranch_9a285ab9054130103bf66c138671a8fc","unique":false,"key_phrases":[],"mask_type":"NONE","static_enum_list":[],"encrypt_if_secure":true}],"actions":[],"tasks":[{"type":"Consumer to system","show_as_button":true,"name":"primary","description":"primary","applicability":"vaVars.__segment_trigger_d209ba02c1054e29935d6693f6952c3a_done==false &amp;&amp; true","mode":"Qmode","key_phrases":[],"greeting_msg":"vaInputs.initialize(\"user\");vaInputs.initialize(\"RootDecisionBranch_da285ab97d4130104b5c57f2e8c092fc\");vaInputs.initialize(\"__silent_StartGoal_fa4353dd22444a34aac6ad42a6b281c9\");vaInputs.initialize(\"__silent_TerminateGoal_d845efab9a29473085fbd0d2293c8160\");vaInputs.initialize(\"__silent_Branch_RootDecisionBranch_9a285ab9054130103bf66c138671a8fc\");vaInputs.initialize(\"__silent_OutputPrompt_e93b330f4e6342f5bf0fb84f1306fe4f\");vaInputs.initialize(\"__silent_Decision_RootDecision_5a285ab98f413010eb08859b81dba6fc\");null;","fields":[{"name":"__silent_Decision_RootDecision_5a285ab98f413010eb08859b81dba6fc","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"RootDecision_for_goal_primary___RootDecision_5a285ab98f413010eb08859b81dba6fc\";vaInputs.__silent_Decision_RootDecision_5a285ab98f413010eb08859b81dba6fc=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"RootDecision_for_goal_primary___RootDecision_5a285ab98f413010eb08859b81dba6fc\";vaInputs.RootDecisionBranch_da285ab97d4130104b5c57f2e8c092fc=true;null;"},{"name":"__silent_Branch_RootDecisionBranch_9a285ab9054130103bf66c138671a8fc","applicable":"vaVars.previous_graph_node==\"RootDecision_for_goal_primary___RootDecision_5a285ab98f413010eb08859b81dba6fc\" &amp;&amp; ((vaInputs.RootDecisionBranch_da285ab97d4130104b5c57f2e8c092fc.getValue() == true))","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"RootDecisionBranch_9a285ab9054130103bf66c138671a8fc___RootDecisionBranch_9a285ab9054130103bf66c138671a8fc\";vaInputs.__silent_Branch_RootDecisionBranch_9a285ab9054130103bf66c138671a8fc=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"RootDecisionBranch_9a285ab9054130103bf66c138671a8fc___RootDecisionBranch_9a285ab9054130103bf66c138671a8fc\";null;"},{"name":"__silent_StartGoal_fa4353dd22444a34aac6ad42a6b281c9","applicable":"vaVars.previous_graph_node==\"RootDecisionBranch_9a285ab9054130103bf66c138671a8fc___RootDecisionBranch_9a285ab9054130103bf66c138671a8fc\"","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"Start___fa4353dd22444a34aac6ad42a6b281c9\";vaInputs.__silent_StartGoal_fa4353dd22444a34aac6ad42a6b281c9=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"Start___fa4353dd22444a34aac6ad42a6b281c9\";null;"},{"name":"__silent_OutputPrompt_e93b330f4e6342f5bf0fb84f1306fe4f","applicable":"vaVars.previous_graph_node==\"Start___fa4353dd22444a34aac6ad42a6b281c9\"","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"hello___e93b330f4e6342f5bf0fb84f1306fe4f\";vaInputs.__silent_OutputPrompt_e93b330f4e6342f5bf0fb84f1306fe4f=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"hello___e93b330f4e6342f5bf0fb84f1306fe4f\";(function execute() {return gs.getMessageLang(\"helllo\", vaContext.getRequesterLang());})();","acknowledge_msg_mask_type":"NONE"},{"name":"__silent_TerminateGoal_d845efab9a29473085fbd0d2293c8160","applicable":"vaVars.previous_graph_node==\"hello___e93b330f4e6342f5bf0fb84f1306fe4f\"","direction":"Input","required":true,"prompt_msg":"vaVars.previous_graph_node=\"End___d845efab9a29473085fbd0d2293c8160\";vaInputs.__silent_TerminateGoal_d845efab9a29473085fbd0d2293c8160=true;null;","confirm_msg_on_default_value":{"msg":"","val_for_confirm":true},"nlu_text_input":false,"nlu_confirmation_prompt":false,"acknowledge_msg":"vaVars.previous_graph_node=\"End___d845efab9a29473085fbd0d2293c8160\";vaVars.__segment_trigger_d209ba02c1054e29935d6693f6952c3a_done=true;null;"}],"variables_update":[]}],"roles":[],"active":true,"published":true,"library":false,"flexible_conversation_switching":false,"design_categories":[],"nlu_provider":"","nlu_model":"","nlu_intent":"","topic_type":"STANDARD","channels":[],"triggerable_by_notification":false,"auto_resolution_enabled":false,"score":0.0,"visible":true,"discoverable":true,"sys_scope":"6ead8e780f603200cd674f8ce1050ed1","sys_domain":"global","title":"hello","nlu_intent_label":"","nlu_model_label":""}</definition>
+        <design_category/>
+        <discoverable>true</discoverable>
+        <fields/>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <is_system_topic>false</is_system_topic>
+        <key_phrases>hello</key_phrases>
+        <last_published_on>2021-06-30 14:08:52</last_published_on>
+        <library>false</library>
+        <library_usage>null</library_usage>
+        <metaphone>HL</metaphone>
+        <name>hello</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <published>true</published>
+        <roles/>
+        <sys_class_name>sys_cs_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-30 14:08:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>d6285ab92f413010c2c7837cf699b6fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>hello</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cs_topic_d6285ab92f413010c2c7837cf699b6fd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-30 14:08:52</sys_updated_on>
+        <title>hello</title>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <vendor display_value="ServiceNow">c2f0b8f187033200246ddd4c97cb0bb9</vendor>
+        <visible>true</visible>
+    </sys_cs_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=d6285ab92f413010c2c7837cf699b6fd"/>
+</record_update>

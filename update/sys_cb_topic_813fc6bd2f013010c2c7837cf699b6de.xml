@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>base</description>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.31",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "35362a930c59463aa487fcd14e3fb6e4": {
+          "id": "35362a930c59463aa487fcd14e3fb6e4",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "1246b7464e98412485a17a61c1c1c081": {
+          "id": "1246b7464e98412485a17a61c1c1c081",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "e08d460fcc9c4095b3aeee6af6717d8f": {
+          "id": "e08d460fcc9c4095b3aeee6af6717d8f",
+          "stepType": "ReusableTopic",
+          "name": "set interaction description",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "set interaction description",
+          "reusableTopicId": "008f46bd2f013010c2c7837cf699b61d",
+          "inputs": {
+            "short_description": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "A "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "intereaction_sysid": {
+              "value": "(function execute() {\n    /* Return a quoted string.  For example:\n\n       if (vaInputs.first_name == 'Bill') {\n           return gs.getMessage('hi there {0}', [vaInputs.first_name]);\n       } else {\n           return gs.getMessage('how are you {0}', [vaInputs.last_name]);\n       }\n    */\n    return vaVars._interaction_record_sysid;\n})()\n",
+              "mode": "script"
+            }
+          },
+          "variableIds": [],
+          "outputs": []
+        },
+        "333d13dbffcd42e2a95ad87287f5d44a": {
+          "id": "333d13dbffcd42e2a95ad87287f5d44a",
+          "stepType": "TextOutput",
+          "name": "done",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "done"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "9bc69761aa2f4740aebd46dc1d8d785c": {
+          "id": "9bc69761aa2f4740aebd46dc1d8d785c",
+          "stepType": "ReusableTopic",
+          "name": "set interaction tag",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "set interaction tag",
+          "reusableTopicId": "8883d2f52f413010c2c7837cf699b6ac",
+          "inputs": {
+            "interaction_sysid": {
+              "value": "(function execute() {\n    /* Return a quoted string.  For example:\n\n       if (vaInputs.first_name == 'Bill') {\n           return gs.getMessage('hi there {0}', [vaInputs.first_name]);\n       } else {\n           return gs.getMessage('how are you {0}', [vaInputs.last_name]);\n       }\n    */\n    return vaVars._interaction_record_sysid;\n})()\n",
+              "mode": "script"
+            },
+            "tag": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "FABLOUS"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            }
+          },
+          "variableIds": [],
+          "outputs": []
+        },
+        "b6320f06f5a642ac8de2eb125d917e35": {
+          "id": "b6320f06f5a642ac8de2eb125d917e35",
+          "name": "switch topic",
+          "script": "(function execute() {\n    vaSystem.switchTopic('hello')\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "da2650479dfa4ebc9b9a9b11c2093dc6": {
+          "id": "da2650479dfa4ebc9b9a9b11c2093dc6",
+          "stepType": "ReusableTopic",
+          "name": "display kb",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "display kb",
+          "reusableTopicId": "62f952b92f413010c2c7837cf699b694",
+          "inputs": {
+            "ka_number": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "KB0000003"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "header": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "here"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "label": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "wow"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            }
+          },
+          "variableIds": [],
+          "outputs": []
+        },
+        "ddb6d0fc0f564416b04a429298da1771": {
+          "id": "ddb6d0fc0f564416b04a429298da1771",
+          "stepType": "LinkOutput",
+          "name": "blob",
+          "url": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "https://dev97948.service-now.com/kb_view.do?sysparm_article=KB0000003"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "label": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "blob"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "header": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "blob"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "linkType": "single",
+          "introMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "listOfLinks": ""
+        }
+      },
+      "edges": [
+        {
+          "id": "d08e01b9473543c49f717c02749605c9",
+          "edgeType": "Edge",
+          "source": "9bc69761aa2f4740aebd46dc1d8d785c",
+          "target": "333d13dbffcd42e2a95ad87287f5d44a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3d5e92c43eaf49c682208e4ba20e060e",
+          "edgeType": "Edge",
+          "source": "35362a930c59463aa487fcd14e3fb6e4",
+          "target": "e08d460fcc9c4095b3aeee6af6717d8f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1e6844a7a3484a48a8dcb8c44d55e299",
+          "edgeType": "Edge",
+          "source": "e08d460fcc9c4095b3aeee6af6717d8f",
+          "target": "9bc69761aa2f4740aebd46dc1d8d785c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d26236230fc24a2f8997f7a6bbd523b5",
+          "edgeType": "Edge",
+          "source": "b6320f06f5a642ac8de2eb125d917e35",
+          "target": "1246b7464e98412485a17a61c1c1c081",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "698b6730bd144880b8e30dbbe5908e7e",
+          "edgeType": "Edge",
+          "source": "333d13dbffcd42e2a95ad87287f5d44a",
+          "target": "da2650479dfa4ebc9b9a9b11c2093dc6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b3710e2fb6544415b4cdeaa08bec5d5e",
+          "edgeType": "Edge",
+          "source": "da2650479dfa4ebc9b9a9b11c2093dc6",
+          "target": "ddb6d0fc0f564416b04a429298da1771",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "43743896a4dc4c888ca4764a999846ce",
+          "edgeType": "Edge",
+          "source": "ddb6d0fc0f564416b04a429298da1771",
+          "target": "b6320f06f5a642ac8de2eb125d917e35",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    }
+  }
+}</graph>
+        <key_phrases>base</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>base</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-30 13:29:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>813fc6bd2f013010c2c7837cf699b6de</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>base</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_813fc6bd2f013010c2c7837cf699b6de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-30 14:19:08</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=813fc6bd2f013010c2c7837cf699b6de"/>
+</record_update>
