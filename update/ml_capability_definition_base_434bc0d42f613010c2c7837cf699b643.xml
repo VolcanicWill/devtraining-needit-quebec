@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ml_capability_definition_base">
+    <ml_capability_definition_base action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <capability display_value="NLU">b4ddf73453c73300d1dcddeeff7b1288</capability>
+        <current_solution_version>1</current_solution_version>
+        <dataset_language>en</dataset_language>
+        <fields/>
+        <filter/>
+        <request_source>api</request_source>
+        <solution_label>ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642</solution_label>
+        <solution_name>ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642</solution_name>
+        <solution_parameters/>
+        <solution_properties>{"authoringModel":{"intents":[{"name":"Email","samples":[],"entities":[]},{"name":"Windows Password Reset","samples":[{"utterance":"password reset for windows"}],"entities":[]}],"schemaVersion":"NY-1","vocabulary":[],"modelPurpose":"virtual_agent","entities":[],"confidenceThreshold":"0.6","lookupSources":[],"name":"ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642","language":"en","version":"3.1.2-HYB"},"label":"ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642","name":"ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642","nluTrainingMode":"IntentClassifier","trainingMode":"sync"}</solution_properties>
+        <stopwords>a6282a25533333008c5bddeeff7b12c3</stopwords>
+        <sys_class_name>ml_capability_definition_base</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-20 08:33:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>434bc0d42f613010c2c7837cf699b643</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>ml_capability_definition_base_434bc0d42f613010c2c7837cf699b643</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-20 08:37:21</sys_updated_on>
+        <table/>
+        <training_frequency>run_once</training_frequency>
+        <word_vector_corpus/>
+    </ml_capability_definition_base>
+</record_update>
