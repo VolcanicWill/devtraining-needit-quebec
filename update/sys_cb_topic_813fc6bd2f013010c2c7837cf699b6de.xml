@@ -25,8 +25,17 @@
           "stepType": "Start",
           "name": "Start",
           "greetingResponse": {
-            "mode": "simple",
-            "value": ""
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "This is the Base Topic"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
           }
         },
         "1246b7464e98412485a17a61c1c1c081": {
@@ -56,7 +65,7 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "A "
+                      "text": "Base Topic"
                     }
                   ]
                 }
@@ -69,68 +78,13 @@
             }
           },
           "variableIds": [],
-          "outputs": []
-        },
-        "333d13dbffcd42e2a95ad87287f5d44a": {
-          "id": "333d13dbffcd42e2a95ad87287f5d44a",
-          "stepType": "TextOutput",
-          "name": "done",
-          "secure": false,
-          "value": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "done"
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          }
-        },
-        "9bc69761aa2f4740aebd46dc1d8d785c": {
-          "id": "9bc69761aa2f4740aebd46dc1d8d785c",
-          "stepType": "ReusableTopic",
-          "name": "set interaction tag",
-          "fields": [],
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          },
-          "reusableTopicChoice": "set interaction tag",
-          "reusableTopicId": "8883d2f52f413010c2c7837cf699b6ac",
-          "inputs": {
-            "interaction_sysid": {
-              "value": "(function execute() {\n    /* Return a quoted string.  For example:\n\n       if (vaInputs.first_name == 'Bill') {\n           return gs.getMessage('hi there {0}', [vaInputs.first_name]);\n       } else {\n           return gs.getMessage('how are you {0}', [vaInputs.last_name]);\n       }\n    */\n    return vaVars._interaction_record_sysid;\n})()\n",
-              "mode": "script"
-            },
-            "tag": {
-              "value": [
-                {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": "FABLOUS"
-                    }
-                  ]
-                }
-              ],
-              "mode": "simple"
-            }
-          },
-          "variableIds": [],
-          "outputs": []
+          "outputs": [],
+          "outdatedNote": false
         },
         "b6320f06f5a642ac8de2eb125d917e35": {
           "id": "b6320f06f5a642ac8de2eb125d917e35",
           "name": "switch topic",
-          "script": "(function execute() {\n    vaSystem.switchTopic('hello')\n})()\n",
+          "script": "(function execute() {\n    vaSystem.switchTopic('Greetings.')\n})()\n",
           "stepType": "ScriptAction",
           "applicability": {
             "value": "",
@@ -168,7 +122,7 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "here"
+                      "text": "Here is something which maybe able to assist you:"
                     }
                   ]
                 }
@@ -181,7 +135,7 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "wow"
+                      "text": "KB Article"
                     }
                   ]
                 }
@@ -190,69 +144,131 @@
             }
           },
           "variableIds": [],
-          "outputs": []
+          "outputs": [],
+          "outdatedNote": false
         },
-        "ddb6d0fc0f564416b04a429298da1771": {
-          "id": "ddb6d0fc0f564416b04a429298da1771",
-          "stepType": "LinkOutput",
-          "name": "blob",
-          "url": {
+        "15b0dbf5095d45ac815bd692076700a1": {
+          "id": "15b0dbf5095d45ac815bd692076700a1",
+          "stepType": "Prompt",
+          "name": "Has this helped?",
+          "prompt": {
             "value": [
               {
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "https://dev97948.service-now.com/kb_view.do?sysparm_article=KB0000003"
+                    "text": "Has this information been useful?"
                   }
                 ]
               }
             ],
             "mode": "simple"
           },
-          "label": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "blob"
-                  }
-                ]
-              }
-            ],
+          "confirmMessage": {
+            "value": "",
             "mode": "simple"
           },
-          "header": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "blob"
-                  }
-                ]
-              }
-            ],
+          "acknowledgeMsg": {
+            "value": "",
             "mode": "simple"
           },
           "applicability": {
             "value": "",
             "mode": "query"
           },
-          "linkType": "single",
-          "introMsg": {
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
             "value": "",
             "mode": "simple"
           },
-          "listOfLinks": ""
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "dee9c8d5dc804186a6ea842e4e1a435d"
+        },
+        "98fde169a7ce4f28ab48bee939a7aedc": {
+          "id": "98fde169a7ce4f28ab48bee939a7aedc",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a7a9dd37bef045eb92beeb5da307084c": {
+          "stepType": "ChoicePrompt",
+          "name": "Additional Options",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What would you like to do?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "1627d75a026f497880f3432f6cb82513",
+          "id": "a7a9dd37bef045eb92beeb5da307084c",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "c36f3b35caab43babca2e259c61ab768": {
+          "id": "c36f3b35caab43babca2e259c61ab768",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "f780891adbfb45e5acc0024d8e3f81ea": {
+          "id": "f780891adbfb45e5acc0024d8e3f81ea",
+          "stepType": "ReusableTopic",
+          "name": "Live Agent test",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "Live Agent test",
+          "reusableTopicId": "48fc11962f513010c2c7837cf699b688",
+          "inputs": {},
+          "variableIds": [],
+          "outputs": []
         }
       },
       "edges": [
         {
-          "id": "d08e01b9473543c49f717c02749605c9",
+          "id": "1e6844a7a3484a48a8dcb8c44d55e299",
           "edgeType": "Edge",
-          "source": "9bc69761aa2f4740aebd46dc1d8d785c",
-          "target": "333d13dbffcd42e2a95ad87287f5d44a",
+          "source": "e08d460fcc9c4095b3aeee6af6717d8f",
+          "target": "da2650479dfa4ebc9b9a9b11c2093dc6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b3710e2fb6544415b4cdeaa08bec5d5e",
+          "edgeType": "Edge",
+          "source": "da2650479dfa4ebc9b9a9b11c2093dc6",
+          "target": "15b0dbf5095d45ac815bd692076700a1",
           "sourcePort": "",
           "targetPort": ""
         },
@@ -265,14 +281,6 @@
           "targetPort": ""
         },
         {
-          "id": "1e6844a7a3484a48a8dcb8c44d55e299",
-          "edgeType": "Edge",
-          "source": "e08d460fcc9c4095b3aeee6af6717d8f",
-          "target": "9bc69761aa2f4740aebd46dc1d8d785c",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "d26236230fc24a2f8997f7a6bbd523b5",
           "edgeType": "Edge",
           "source": "b6320f06f5a642ac8de2eb125d917e35",
@@ -281,26 +289,104 @@
           "targetPort": ""
         },
         {
-          "id": "698b6730bd144880b8e30dbbe5908e7e",
+          "id": "3002f8854586403f9f54c3fa376459d1",
           "edgeType": "Edge",
-          "source": "333d13dbffcd42e2a95ad87287f5d44a",
+          "source": "15b0dbf5095d45ac815bd692076700a1",
+          "target": "98fde169a7ce4f28ab48bee939a7aedc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8b48a9019f4c4a7ab52bedfe26e78a74",
+          "edgeType": "Branch",
+          "source": "98fde169a7ce4f28ab48bee939a7aedc",
+          "target": "1246b7464e98412485a17a61c1c1c081",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.has_this_helped_=true",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "57d3f00336974438a2a7692cf36d8482",
+          "edgeType": "Branch",
+          "source": "98fde169a7ce4f28ab48bee939a7aedc",
+          "target": "a7a9dd37bef045eb92beeb5da307084c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.has_this_helped_=",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "d5026c9962634fa59c620651f1470327",
+          "edgeType": "Edge",
+          "source": "a7a9dd37bef045eb92beeb5da307084c",
+          "target": "c36f3b35caab43babca2e259c61ab768",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b039b19d1620429da912827829341794",
+          "edgeType": "Branch",
+          "source": "c36f3b35caab43babca2e259c61ab768",
+          "target": "b6320f06f5a642ac8de2eb125d917e35",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.additional_options=something_else",
+            "mode": "query"
+          },
+          "label": "switch"
+        },
+        {
+          "id": "b6f5923b8e9740a09ffd7fe8e9729168",
+          "edgeType": "Branch",
+          "source": "c36f3b35caab43babca2e259c61ab768",
           "target": "da2650479dfa4ebc9b9a9b11c2093dc6",
           "sourcePort": "",
-          "targetPort": ""
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.additional_options=return",
+            "mode": "query"
+          },
+          "label": "return"
         },
         {
-          "id": "b3710e2fb6544415b4cdeaa08bec5d5e",
-          "edgeType": "Edge",
-          "source": "da2650479dfa4ebc9b9a9b11c2093dc6",
-          "target": "ddb6d0fc0f564416b04a429298da1771",
+          "id": "a1b8ea7f9a9343de99a5b8e85df41c96",
+          "edgeType": "Branch",
+          "source": "c36f3b35caab43babca2e259c61ab768",
+          "target": "1246b7464e98412485a17a61c1c1c081",
           "sourcePort": "",
-          "targetPort": ""
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.additional_options=report",
+            "mode": "query"
+          },
+          "label": "report"
         },
         {
-          "id": "43743896a4dc4c888ca4764a999846ce",
+          "id": "642ed272eaef40aeac08985953fd88a2",
+          "edgeType": "Branch",
+          "source": "c36f3b35caab43babca2e259c61ab768",
+          "target": "f780891adbfb45e5acc0024d8e3f81ea",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.additional_options=transfer",
+            "mode": "query"
+          },
+          "label": "live agent"
+        },
+        {
+          "id": "caea998815b74b3ba0a94bf9e7c92957",
           "edgeType": "Edge",
-          "source": "ddb6d0fc0f564416b04a429298da1771",
-          "target": "b6320f06f5a642ac8de2eb125d917e35",
+          "source": "f780891adbfb45e5acc0024d8e3f81ea",
+          "target": "1246b7464e98412485a17a61c1c1c081",
           "sourcePort": "",
           "targetPort": ""
         }
@@ -315,13 +401,49 @@
       "name": "user",
       "table": "sys_user",
       "varType": "reference"
+    },
+    "dee9c8d5dc804186a6ea842e4e1a435d": {
+      "id": "dee9c8d5dc804186a6ea842e4e1a435d",
+      "name": "has_this_helped_",
+      "label": "Has This Helped?",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs"
+    },
+    "1627d75a026f497880f3432f6cb82513": {
+      "id": "1627d75a026f497880f3432f6cb82513",
+      "name": "additional_options",
+      "label": "Additional Options",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Let Virtual Agent report a fault for you",
+          "value": "report"
+        },
+        {
+          "label": "Transfer to a Service Desk Agent",
+          "value": "transfer",
+          "checked": true
+        },
+        {
+          "label": "Look for something else",
+          "value": "something_else",
+          "checked": true
+        },
+        {
+          "label": "Return to topic options",
+          "value": "return",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
     }
   }
 }</graph>
-        <key_phrases>base</key_phrases>
+        <key_phrases>Base Topic</key_phrases>
         <library>false</library>
         <live_agent>false</live_agent>
-        <name>base</name>
+        <name>Base Topic</name>
         <nlu_intent/>
         <nlu_intent_label/>
         <nlu_model/>
@@ -334,14 +456,14 @@
         <sys_created_on>2021-06-30 13:29:45</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>813fc6bd2f013010c2c7837cf699b6de</sys_id>
-        <sys_mod_count>8</sys_mod_count>
-        <sys_name>base</sys_name>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Base Topic</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_813fc6bd2f013010c2c7837cf699b6de</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-30 14:19:08</sys_updated_on>
+        <sys_updated_on>2021-07-20 08:27:09</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>

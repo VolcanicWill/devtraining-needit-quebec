@@ -39,7 +39,7 @@
         <limit/>
         <mandatory>false</mandatory>
         <max_length>32</max_length>
-        <model display_value="base">813fc6bd2f013010c2c7837cf699b6de</model>
+        <model display_value="Base Topic">813fc6bd2f013010c2c7837cf699b6de</model>
         <model_id>813fc6bd2f013010c2c7837cf699b6de</model_id>
         <model_table/>
         <name>var__m_topic_variable_813fc6bd2f013010c2c7837cf699b6de</name>
