@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>Topic Block for Creating</description>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.31",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "9bf8ef4e7ec444688b47af5706e6d6b8": {
+          "id": "9bf8ef4e7ec444688b47af5706e6d6b8",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Time to log an Incident"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "parameters": [
+            {
+              "name": "Short Description",
+              "value": "WOW Will you did it",
+              "id": "0688fe0ccd19425aaf1ba806938fca6b",
+              "checked": true,
+              "referenced": true,
+              "disabled": true
+            },
+            {
+              "name": "Caller",
+              "value": "",
+              "id": "33bee68b23af4d708ec0c5e57c21038e",
+              "checked": true,
+              "referenced": true,
+              "disabled": true
+            },
+            {
+              "name": "Additional comments",
+              "value": "",
+              "id": "63758972024a42ef8a56ed6e6a14e157",
+              "checked": true,
+              "referenced": true,
+              "disabled": true
+            },
+            {
+              "name": "Company",
+              "value": "",
+              "id": "e735a6ad4fef426eabb265d120e00805",
+              "checked": true,
+              "disabled": true,
+              "referenced": true
+            },
+            {
+              "name": "Configuration item",
+              "value": "",
+              "id": "03a697c417b94d5d931d2b4b0adcdc44",
+              "checked": true,
+              "disabled": true,
+              "referenced": true
+            },
+            {
+              "name": "Escalation",
+              "value": "",
+              "id": "1e0c9f98661c4d0b8d3b0167aca2332b",
+              "checked": true,
+              "disabled": true,
+              "referenced": true
+            },
+            {
+              "name": "Impact",
+              "value": "",
+              "id": "60d37834d7d540c1889be2ba09819784",
+              "checked": true,
+              "referenced": true,
+              "disabled": true
+            },
+            {
+              "name": "Incident State",
+              "value": "",
+              "id": "9b4293b5a3eb46de9e7db90b55fb4da1",
+              "checked": true,
+              "referenced": true,
+              "disabled": true
+            },
+            {
+              "name": "Priority",
+              "value": "",
+              "id": "f34ac57977454a3aac24d30bd9e830ba",
+              "checked": true,
+              "referenced": true,
+              "disabled": true
+            },
+            {
+              "name": "Urgency",
+              "value": "",
+              "id": "0d43338d1e364fbba5111751674dda79",
+              "checked": true,
+              "referenced": true,
+              "disabled": true
+            }
+          ],
+          "variableIds": [
+            "0688fe0ccd19425aaf1ba806938fca6b",
+            "33bee68b23af4d708ec0c5e57c21038e",
+            "63758972024a42ef8a56ed6e6a14e157",
+            "e735a6ad4fef426eabb265d120e00805",
+            "03a697c417b94d5d931d2b4b0adcdc44",
+            "1e0c9f98661c4d0b8d3b0167aca2332b",
+            "60d37834d7d540c1889be2ba09819784",
+            "9b4293b5a3eb46de9e7db90b55fb4da1",
+            "f34ac57977454a3aac24d30bd9e830ba",
+            "0d43338d1e364fbba5111751674dda79"
+          ]
+        },
+        "6b05220c106e4b389ac20ecb79a2ea1f": {
+          "id": "6b05220c106e4b389ac20ecb79a2ea1f",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "dcb96065a585419297cf1115678404ec": {
+          "id": "dcb96065a585419297cf1115678404ec",
+          "stepType": "RecordOutput",
+          "name": "Display Incident",
+          "variableId": "a1fb4d738df7460990c5735ad4a0e638",
+          "cardTemplate": "General",
+          "cardFields": {},
+          "mode": "variable",
+          "tableName": "incident",
+          "fields": [
+            "short_description"
+          ],
+          "cardDefinition": {
+            "name": "Record",
+            "value": "General"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": ""
+          }
+        },
+        "0cf39989c87b43bdbc7455b5f95f3917": {
+          "id": "0cf39989c87b43bdbc7455b5f95f3917",
+          "stepType": "CrudAction",
+          "name": "Create INC",
+          "template": "caller_id={{vaVars.caller}}^assigned_to=0e761c0b2f303010c2c7837cf699b6c0^company={{vaVars.company}}^cmdb_ci={{vaVars.configurationItem}}^escalation={{vaVars.escalation}}^impact={{vaVars.impact}}^incident_state={{vaVars.incidentState}}^location={{vaInputs.user.location}}^opened_by=0e761c0b2f303010c2c7837cf699b6c0^priority={{vaVars.priority}}^urgency={{vaVars.urgency}}^comments={{vaVars.additionalComments}}^short_description={{vaVars.shortDescription}}^work_notes=This is a work note",
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "a1fb4d738df7460990c5735ad4a0e638"
+        },
+        "9e7c5929eaaf449ea5ca493955169845": {
+          "id": "9e7c5929eaaf449ea5ca493955169845",
+          "name": "Define Variables",
+          "script": "(function execute() {\n    vaVars.shortDescription = vaInputs.short_description;\n    vaVars.additionalComments = vaInputs.additional_comments;\n    vaVars.company = vaInputs.company;\n    vaVars.configurationItem = vaInputs.configuration_item;\n    vaVars.escalation = vaInputs.escalation;\n    vaVars.impact = vaInputs.impact;\n    vaVars.incidentState = vaInputs.incident_state;\n    vaVars.priority = vaInputs.priority;\n    vaVars.urgency = vaInputs.urgency;\n    vaVars.caller = vaInputs.caller;\n\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a24c0df7f1714c12ac13206d70c7a0d9": {
+          "id": "a24c0df7f1714c12ac13206d70c7a0d9",
+          "stepType": "Prompt",
+          "name": "stop right there SCRIPTS",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "stop right there SCRIPTS"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "9e706b767a2f491c8bf1dbd4ef4e5c81",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "d58c02f23e934c0d97f6fcf68a666f5b",
+          "edgeType": "Edge",
+          "source": "0cf39989c87b43bdbc7455b5f95f3917",
+          "target": "dcb96065a585419297cf1115678404ec",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "97ef785bff3d4b8cbeb52cefa9554ff3",
+          "edgeType": "Edge",
+          "source": "9bf8ef4e7ec444688b47af5706e6d6b8",
+          "target": "9e7c5929eaaf449ea5ca493955169845",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2d1155e81c5544e7921f9885c4af078a",
+          "edgeType": "Edge",
+          "source": "9e7c5929eaaf449ea5ca493955169845",
+          "target": "0cf39989c87b43bdbc7455b5f95f3917",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5853bf31fc1344f389ea0cb45ce4cc0d",
+          "edgeType": "Edge",
+          "source": "dcb96065a585419297cf1115678404ec",
+          "target": "a24c0df7f1714c12ac13206d70c7a0d9",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3003d811fa4f4a03a91e27da8de1d499",
+          "edgeType": "Edge",
+          "source": "a24c0df7f1714c12ac13206d70c7a0d9",
+          "target": "6b05220c106e4b389ac20ecb79a2ea1f",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "0688fe0ccd19425aaf1ba806938fca6b": {
+      "id": "0688fe0ccd19425aaf1ba806938fca6b",
+      "name": "short_description",
+      "label": "Short Description",
+      "defaultValue": "WOW Will you did it",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "63758972024a42ef8a56ed6e6a14e157": {
+      "id": "63758972024a42ef8a56ed6e6a14e157",
+      "name": "additional_comments",
+      "label": "Additional Comments",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "a1fb4d738df7460990c5735ad4a0e638": {
+      "id": "a1fb4d738df7460990c5735ad4a0e638",
+      "name": "create_inc",
+      "label": "Create INC",
+      "varType": "reference",
+      "table": "incident",
+      "inactive": false,
+      "category": "vaInputs"
+    },
+    "e735a6ad4fef426eabb265d120e00805": {
+      "id": "e735a6ad4fef426eabb265d120e00805",
+      "name": "company",
+      "label": "Company",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "03a697c417b94d5d931d2b4b0adcdc44": {
+      "id": "03a697c417b94d5d931d2b4b0adcdc44",
+      "name": "configuration_item",
+      "label": "Configuration Item",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "1e0c9f98661c4d0b8d3b0167aca2332b": {
+      "id": "1e0c9f98661c4d0b8d3b0167aca2332b",
+      "name": "escalation",
+      "label": "Escalation",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "60d37834d7d540c1889be2ba09819784": {
+      "id": "60d37834d7d540c1889be2ba09819784",
+      "name": "impact",
+      "label": "Impact",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "9b4293b5a3eb46de9e7db90b55fb4da1": {
+      "id": "9b4293b5a3eb46de9e7db90b55fb4da1",
+      "name": "incident_state",
+      "label": "Incident State",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "f34ac57977454a3aac24d30bd9e830ba": {
+      "id": "f34ac57977454a3aac24d30bd9e830ba",
+      "name": "priority",
+      "label": "Priority",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "0d43338d1e364fbba5111751674dda79": {
+      "id": "0d43338d1e364fbba5111751674dda79",
+      "name": "urgency",
+      "label": "Urgency",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "6ed94166ed2a4bce8552698ad529107e": {
+      "id": "6ed94166ed2a4bce8552698ad529107e",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "shortDescription",
+      "label": "shortDescription",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "b70cb8d4c0e4445882d5dad5fe82645a": {
+      "id": "b70cb8d4c0e4445882d5dad5fe82645a",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "additionalComments",
+      "label": "additionalComments",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "4b2cb6c76dc84beb91377b3ab2520519": {
+      "id": "4b2cb6c76dc84beb91377b3ab2520519",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "company",
+      "label": "company",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "548a5548b2394753a42c776bb93a3d00": {
+      "id": "548a5548b2394753a42c776bb93a3d00",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "configurationItem",
+      "label": "configurationItem",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "d2ad89a41d7e4e03aa6e651c746582cc": {
+      "id": "d2ad89a41d7e4e03aa6e651c746582cc",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "escalation",
+      "label": "escalation",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "c7fc817796cc4c2abbb677480fe09c89": {
+      "id": "c7fc817796cc4c2abbb677480fe09c89",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "impact",
+      "label": "impact",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "4aead502119e415588b0c28878612ceb": {
+      "id": "4aead502119e415588b0c28878612ceb",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "incidentState",
+      "label": "incidentState",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "0bb6fef7730c412c947dfe25384af751": {
+      "id": "0bb6fef7730c412c947dfe25384af751",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "priority",
+      "label": "priority",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "086e3115592e4558b3f516e1e410e085": {
+      "id": "086e3115592e4558b3f516e1e410e085",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "urgency",
+      "label": "urgency",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "9e706b767a2f491c8bf1dbd4ef4e5c81": {
+      "id": "9e706b767a2f491c8bf1dbd4ef4e5c81",
+      "name": "stop_right_there_scripts",
+      "label": "Stop Right There SCRIPTS",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTYyNjg3ODc1NjQ3MSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "33bee68b23af4d708ec0c5e57c21038e": {
+      "id": "33bee68b23af4d708ec0c5e57c21038e",
+      "name": "caller",
+      "label": "Caller",
+      "defaultValue": "",
+      "varType": "string",
+      "category": "vaInputs",
+      "metadata": {
+        "libraryMappingType": "input"
+      }
+    },
+    "3009c3c6f48843cdbb733fa88b41b4fe": {
+      "id": "3009c3c6f48843cdbb733fa88b41b4fe",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "caller",
+      "label": "caller",
+      "varType": "script",
+      "category": "vaVars"
+    }
+  }
+}</graph>
+        <key_phrases/>
+        <library>true</library>
+        <live_agent>false</live_agent>
+        <name>Create INC</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-21 13:25:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>5287da682f213010c2c7837cf699b6d0</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Create INC</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_5287da682f213010c2c7837cf699b6d0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-21 15:16:50</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>TOPIC_BLOCK</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=5287da682f213010c2c7837cf699b6d0"/>
+</record_update>
