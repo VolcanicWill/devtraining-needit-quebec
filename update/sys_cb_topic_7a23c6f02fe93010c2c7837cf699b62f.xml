@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <auto_resolution_enabled>false</auto_resolution_enabled>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>The Password reset Topic</description>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.31",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "ded56ef2edf244f8af6f7fb9ceaecfe4": {
+          "id": "ded56ef2edf244f8af6f7fb9ceaecfe4",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Welcome Guest User"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "ccef4a3b76b14e979cf088fa5e9adaf0": {
+          "id": "ccef4a3b76b14e979cf088fa5e9adaf0",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "d0f7f058b33841a59649322ee98b66f2": {
+          "stepType": "ChoicePrompt",
+          "name": "error",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "What error message do you receive when trying to log in?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "806fa078f9f740e1924ec23c543cb00b",
+          "id": "d0f7f058b33841a59649322ee98b66f2",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "aff54d95bcbe48d1bcf995dd7810f64f": {
+          "id": "aff54d95bcbe48d1bcf995dd7810f64f",
+          "stepType": "Prompt",
+          "name": "email",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please confirm your email address"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "db63fdffed9e42f197d6231b0f386f26",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "22f5a67f83f04605b047a36f8e1d24cc": {
+          "id": "22f5a67f83f04605b047a36f8e1d24cc",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "7d3d2db71fc44221a31132fa923e2973": {
+          "id": "7d3d2db71fc44221a31132fa923e2973",
+          "stepType": "Prompt",
+          "name": "did unlock work",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "I have now unlocked your account. Has this resolved your issue?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "6ebfca52f4da45898cf0271c70b4ad54"
+        },
+        "9b31580b6a874296b41efe98357a2196": {
+          "id": "9b31580b6a874296b41efe98357a2196",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a609ae5922064fc49650dc049c7b246a": {
+          "id": "a609ae5922064fc49650dc049c7b246a",
+          "stepType": "TextOutput",
+          "name": "reset message",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "I will now reset your password"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "71aef735448c4573852869dbbe5a8c5d": {
+          "id": "71aef735448c4573852869dbbe5a8c5d",
+          "stepType": "Prompt",
+          "name": "did password reset work",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Password has now been reset. Has this helped resolve your issue?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "b1dd1e91b6e545c3be7bd901d1e8a171"
+        },
+        "700403a82fd242aea13a03202eff98fe": {
+          "id": "700403a82fd242aea13a03202eff98fe",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "d5dad8778e9249bb94b5c28120d29225": {
+          "id": "d5dad8778e9249bb94b5c28120d29225",
+          "stepType": "TextOutput",
+          "name": "LIVE AGENT",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "I will transfer you to a live agent"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "fa157e54ba1e4194af35da94da1c2666": {
+          "id": "fa157e54ba1e4194af35da94da1c2666",
+          "stepType": "ReusableTopic",
+          "name": "Live Agent test",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "Live Agent test",
+          "reusableTopicId": "48fc11962f513010c2c7837cf699b688",
+          "inputs": {},
+          "variableIds": [],
+          "outputs": []
+        },
+        "f61dbc35436948e0be6dc146d2e26e9e": {
+          "id": "f61dbc35436948e0be6dc146d2e26e9e",
+          "stepType": "ReusableTopic",
+          "name": "Create INC",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "Create INC",
+          "reusableTopicId": "7ca52ea02f613010c2c7837cf699b62a",
+          "inputs": {
+            "short_description": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "AD- Password reset/Account unlock"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "caller": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user.sys_id}}",
+                        "displayValue": "Input Variables➛User➛Sys ID"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "additional_comments": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "none"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "company": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "SCC"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "configuration_item": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "n/a"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "escalation": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "yes"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "impact": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "2"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "incident_state": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Open"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "priority": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "2"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "urgency": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "1"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            }
+          },
+          "variableIds": [],
+          "outputs": [],
+          "outdatedNote": false
+        }
+      },
+      "edges": [
+        {
+          "id": "cce4065ce8ed493986063b52d10deb67",
+          "edgeType": "Edge",
+          "source": "ded56ef2edf244f8af6f7fb9ceaecfe4",
+          "target": "aff54d95bcbe48d1bcf995dd7810f64f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b1fc89dc7cb14480a6f5d720810aaceb",
+          "edgeType": "Edge",
+          "source": "aff54d95bcbe48d1bcf995dd7810f64f",
+          "target": "d0f7f058b33841a59649322ee98b66f2",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "082f0ff94c2a4d61b32a449e6b9788da",
+          "edgeType": "Edge",
+          "source": "d0f7f058b33841a59649322ee98b66f2",
+          "target": "22f5a67f83f04605b047a36f8e1d24cc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a6792d3963cd42c38dac291eb5d9fc66",
+          "edgeType": "Edge",
+          "source": "7d3d2db71fc44221a31132fa923e2973",
+          "target": "9b31580b6a874296b41efe98357a2196",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9b5b30493fc64996846a640fbefcceb9",
+          "edgeType": "Branch",
+          "source": "9b31580b6a874296b41efe98357a2196",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.did_unlock_work=true",
+            "mode": "query"
+          },
+          "label": "yes"
+        },
+        {
+          "id": "b7df2b204cef429eba6d8d2982dbe850",
+          "edgeType": "Branch",
+          "source": "9b31580b6a874296b41efe98357a2196",
+          "target": "a609ae5922064fc49650dc049c7b246a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.did_unlock_work=",
+            "mode": "query"
+          },
+          "label": "no"
+        },
+        {
+          "id": "4f195edd8aea43088b8865c79827e2bf",
+          "edgeType": "Branch",
+          "source": "22f5a67f83f04605b047a36f8e1d24cc",
+          "target": "a609ae5922064fc49650dc049c7b246a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.error=password",
+            "mode": "query"
+          },
+          "label": "password"
+        },
+        {
+          "id": "360741ee19c34f98964a75efc3e311d7",
+          "edgeType": "Edge",
+          "source": "a609ae5922064fc49650dc049c7b246a",
+          "target": "71aef735448c4573852869dbbe5a8c5d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1317cb9b51ea419e80c0d9cdb7027c63",
+          "edgeType": "Edge",
+          "source": "71aef735448c4573852869dbbe5a8c5d",
+          "target": "700403a82fd242aea13a03202eff98fe",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "235da3c4a32f48499438801896e347c7",
+          "edgeType": "Branch",
+          "source": "700403a82fd242aea13a03202eff98fe",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.did_password_reset_work=true",
+            "mode": "query"
+          },
+          "label": "yes"
+        },
+        {
+          "id": "ab69cfbb517240d291429fe928e81e75",
+          "edgeType": "Branch",
+          "source": "700403a82fd242aea13a03202eff98fe",
+          "target": "d5dad8778e9249bb94b5c28120d29225",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.did_password_reset_work=",
+            "mode": "query"
+          },
+          "label": "no"
+        },
+        {
+          "id": "61fef45d664a4e479252aaa55bb3db61",
+          "edgeType": "Edge",
+          "source": "d5dad8778e9249bb94b5c28120d29225",
+          "target": "fa157e54ba1e4194af35da94da1c2666",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "df77685c8bd24edabe9b763fb3c8456c",
+          "edgeType": "Edge",
+          "source": "fa157e54ba1e4194af35da94da1c2666",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c3548b5af1ca42aba66543292ec5cf84",
+          "edgeType": "Branch",
+          "source": "22f5a67f83f04605b047a36f8e1d24cc",
+          "target": "f61dbc35436948e0be6dc146d2e26e9e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.error=locked",
+            "mode": "query"
+          },
+          "label": "account locked"
+        },
+        {
+          "id": "b07eb41cb9bf45eab59052d570ca9725",
+          "edgeType": "Edge",
+          "source": "f61dbc35436948e0be6dc146d2e26e9e",
+          "target": "7d3d2db71fc44221a31132fa923e2973",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "dce55329149f44349e4ea2e4549753b4": {
+      "category": "vaInputs",
+      "id": "dce55329149f44349e4ea2e4549753b4",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "806fa078f9f740e1924ec23c543cb00b": {
+      "id": "806fa078f9f740e1924ec23c543cb00b",
+      "name": "error",
+      "label": "Error",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Account locked out",
+          "value": "locked"
+        },
+        {
+          "label": "Username/Password incorrect",
+          "value": "password",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
+    },
+    "db63fdffed9e42f197d6231b0f386f26": {
+      "id": "db63fdffed9e42f197d6231b0f386f26",
+      "name": "email",
+      "label": "Email",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTYyNjI1MjYxMjU4MiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
+    },
+    "6ebfca52f4da45898cf0271c70b4ad54": {
+      "id": "6ebfca52f4da45898cf0271c70b4ad54",
+      "name": "did_unlock_work",
+      "label": "Did Unlock Work",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs"
+    },
+    "b1dd1e91b6e545c3be7bd901d1e8a171": {
+      "id": "b1dd1e91b6e545c3be7bd901d1e8a171",
+      "name": "did_password_reset_work",
+      "label": "Did Password Reset Work",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs"
+    }
+  }
+}</graph>
+        <key_phrases>NeedIt PR,Windows Password Reset/Account Unlock,reset my password,locked out</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <name>NeedIt PR</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles>public</roles>
+        <source_topic_id>b2f45dde2f113010c2c7837cf699b692</source_topic_id>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-22 06:34:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>NeedIt PR</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-22 06:39:42</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=7a23c6f02fe93010c2c7837cf699b62f"/>
+</record_update>
