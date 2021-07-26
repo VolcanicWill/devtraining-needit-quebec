@@ -184,40 +184,17 @@
           "stepType": "Decision",
           "name": "Decision"
         },
-        "a609ae5922064fc49650dc049c7b246a": {
-          "id": "a609ae5922064fc49650dc049c7b246a",
-          "stepType": "TextOutput",
-          "name": "reset message",
-          "secure": false,
-          "value": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "I will now reset your password"
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          }
-        },
         "71aef735448c4573852869dbbe5a8c5d": {
           "id": "71aef735448c4573852869dbbe5a8c5d",
           "stepType": "Prompt",
-          "name": "did password reset work",
+          "name": "Has this helped?",
           "prompt": {
             "value": [
               {
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Password has now been reset. Has this helped resolve your issue?"
+                    "text": "Have the following steps provided been helpful to you?"
                   }
                 ]
               }
@@ -252,29 +229,6 @@
           "id": "700403a82fd242aea13a03202eff98fe",
           "stepType": "Decision",
           "name": "Decision"
-        },
-        "d5dad8778e9249bb94b5c28120d29225": {
-          "id": "d5dad8778e9249bb94b5c28120d29225",
-          "stepType": "TextOutput",
-          "name": "LIVE AGENT",
-          "secure": false,
-          "value": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "I will transfer you to a live agent"
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          }
         },
         "fa157e54ba1e4194af35da94da1c2666": {
           "id": "fa157e54ba1e4194af35da94da1c2666",
@@ -568,10 +522,260 @@
           "stepType": "Decision",
           "name": "Decision"
         },
-        "89e5911077be49568df00f80e7c5e81e": {
-          "id": "89e5911077be49568df00f80e7c5e81e",
+        "9314951929b547abb5e40f61aa7fda02": {
+          "id": "9314951929b547abb5e40f61aa7fda02",
+          "name": "convert input to lowercase",
+          "script": "(function execute() {\n    \n    vaVars.daveDad = vaInputs.line_manager;\n    \n    const str = vaVars.daveDad;\n\n    const str2 = str.charAt(0).toUpperCase() + str.slice(1);\n\n    vaVars.daveDad = str2;\n    vaInputs.line_manager = vaVars.daveDad;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a48118ccc04543edb10e36815edc98c0": {
+          "id": "a48118ccc04543edb10e36815edc98c0",
+          "stepType": "ReusableTopic",
+          "name": "Create INC",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "Create INC",
+          "reusableTopicId": "7ca52ea02f613010c2c7837cf699b62a",
+          "inputs": {
+            "short_description": {
+              "value": "WOW Will you did it",
+              "mode": "simple"
+            },
+            "caller": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.look_up_user.user_name}}",
+                        "displayValue": "Input Variables➛Look Up User➛User ID"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "additional_comments": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Cancelled. Unable to find details"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "company": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "SCC"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "configuration_item": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "n/a"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "escalation": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "yes"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "impact": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "2"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "incident_state": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Open"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "priority": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "2"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "urgency": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "1"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            }
+          },
+          "variableIds": [],
+          "outputs": [],
+          "outdatedNote": false
+        },
+        "25022b14aec34f11aba0ad1cadc235f4": {
+          "id": "25022b14aec34f11aba0ad1cadc235f4",
+          "stepType": "Prompt",
+          "name": "option to go to live agent",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Would you like me to transfer you to a Service Desk Agent?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "cf8283fb68a54537a22883054f98cbf2"
+        },
+        "87d0f453316a4f938262857b0aed09ed": {
+          "id": "87d0f453316a4f938262857b0aed09ed",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a38256431c004b3c803cd2e926af4b94": {
+          "id": "a38256431c004b3c803cd2e926af4b94",
+          "stepType": "Prompt",
+          "name": "email manager",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Are you happy with me to move forward with this solution?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "814710412d874585a1e912f006c392e2"
+        },
+        "0a8f194f69c74a368ded655354cc4163": {
+          "id": "0a8f194f69c74a368ded655354cc4163",
           "stepType": "TextOutput",
-          "name": "test",
+          "name": "process A",
           "secure": false,
           "value": {
             "value": [
@@ -579,22 +783,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": ""
-                  },
-                  {
-                    "type": "datapill",
-                    "dataPill": {
-                      "value": "{{vaInputs.look_up_user.manager.first_name}}",
-                      "displayValue": "Input Variables➛Look Up User➛Manager➛First name"
-                    },
-                    "children": [
-                      {
-                        "text": ""
-                      }
-                    ]
-                  },
-                  {
-                    "text": ""
+                    "text": "I can send a request to your line manager requesting approval to reset your password."
                   }
                 ]
               }
@@ -606,11 +795,75 @@
             "mode": "query"
           }
         },
-        "9314951929b547abb5e40f61aa7fda02": {
-          "id": "9314951929b547abb5e40f61aa7fda02",
-          "name": "convert input to lowercase",
-          "script": "(function execute() {\n    \n    vaVars.daveDad = vaInputs.line_manager;\n    \n    const str = vaVars.daveDad;\n\n    const str2 = str.charAt(0).toUpperCase() + str.slice(1);\n\n    vaVars.daveDad = str2;\n    vaInputs.line_manager = vaVars.daveDad;\n})()\n",
-          "stepType": "ScriptAction",
+        "94b831834d814a3a8d58c6e95c8bcaf2": {
+          "id": "94b831834d814a3a8d58c6e95c8bcaf2",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "ebd9159713b949f7a4bfd4c0220105c2": {
+          "id": "ebd9159713b949f7a4bfd4c0220105c2",
+          "stepType": "TextOutput",
+          "name": "emailed A",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "An email has now been sent to your line manager requesting approval to reset the password."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "c071ba0782dc4480adb3a0cb8c6bfae7": {
+          "id": "c071ba0782dc4480adb3a0cb8c6bfae7",
+          "stepType": "TextOutput",
+          "name": "emailed B",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Once approved, your line manager will receive an email with the new password."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "6c20557d73dc477eadcf9faa1ec7d65d": {
+          "id": "6c20557d73dc477eadcf9faa1ec7d65d",
+          "stepType": "TextOutput",
+          "name": "process B",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Once approved your manager will be emailed the password and can then provide it to you."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
           "applicability": {
             "value": "",
             "mode": "query"
@@ -622,9 +875,22 @@
           "id": "2ab8191d90a548ca93a399c1aea6863c",
           "edgeType": "Edge",
           "source": "3911854b7520416284f1a3ae0cf9c39b",
-          "target": "89e5911077be49568df00f80e7c5e81e",
+          "target": "f02779c653d24e8ca8b00bdb769e8d48",
           "sourcePort": "",
           "targetPort": ""
+        },
+        {
+          "id": "0bdcf18a1df64925bb4274e94687f532",
+          "edgeType": "Branch",
+          "source": "87d0f453316a4f938262857b0aed09ed",
+          "target": "fa157e54ba1e4194af35da94da1c2666",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.option_to_go_to_live_agent=true",
+            "mode": "query"
+          },
+          "label": "Yes"
         },
         {
           "id": "b1fc89dc7cb14480a6f5d720810aaceb",
@@ -672,40 +938,6 @@
           "label": "yes"
         },
         {
-          "id": "b7df2b204cef429eba6d8d2982dbe850",
-          "edgeType": "Branch",
-          "source": "9b31580b6a874296b41efe98357a2196",
-          "target": "a609ae5922064fc49650dc049c7b246a",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.did_unlock_work=",
-            "mode": "query"
-          },
-          "label": "no"
-        },
-        {
-          "id": "4f195edd8aea43088b8865c79827e2bf",
-          "edgeType": "Branch",
-          "source": "22f5a67f83f04605b047a36f8e1d24cc",
-          "target": "a609ae5922064fc49650dc049c7b246a",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.error=password",
-            "mode": "query"
-          },
-          "label": "password"
-        },
-        {
-          "id": "360741ee19c34f98964a75efc3e311d7",
-          "edgeType": "Edge",
-          "source": "a609ae5922064fc49650dc049c7b246a",
-          "target": "71aef735448c4573852869dbbe5a8c5d",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "1317cb9b51ea419e80c0d9cdb7027c63",
           "edgeType": "Edge",
           "source": "71aef735448c4573852869dbbe5a8c5d",
@@ -721,7 +953,7 @@
           "sourcePort": "",
           "targetPort": "",
           "expression": {
-            "value": "vaInputs.did_password_reset_work=true",
+            "value": "vaInputs.has_this_helped_=true",
             "mode": "query"
           },
           "label": "yes"
@@ -730,22 +962,14 @@
           "id": "ab69cfbb517240d291429fe928e81e75",
           "edgeType": "Branch",
           "source": "700403a82fd242aea13a03202eff98fe",
-          "target": "d5dad8778e9249bb94b5c28120d29225",
+          "target": "25022b14aec34f11aba0ad1cadc235f4",
           "sourcePort": "",
           "targetPort": "",
           "expression": {
-            "value": "vaInputs.did_password_reset_work=",
+            "value": "vaInputs.has_this_helped_=",
             "mode": "query"
           },
           "label": "no"
-        },
-        {
-          "id": "61fef45d664a4e479252aaa55bb3db61",
-          "edgeType": "Edge",
-          "source": "d5dad8778e9249bb94b5c28120d29225",
-          "target": "fa157e54ba1e4194af35da94da1c2666",
-          "sourcePort": "",
-          "targetPort": ""
         },
         {
           "id": "df77685c8bd24edabe9b763fb3c8456c",
@@ -798,14 +1022,6 @@
           "label": "false"
         },
         {
-          "id": "5baec6ad73434ebd8c9868fbc12389ee",
-          "edgeType": "Edge",
-          "source": "ba630c050252484691f230818107ffe3",
-          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "cf80094d4606475b8011a86d896e1728",
           "edgeType": "Branch",
           "source": "8e8057dd160c4072a96cec6352160775",
@@ -845,14 +1061,6 @@
           "label": "false"
         },
         {
-          "id": "6c81c111863f47e39671782f58463923",
-          "edgeType": "Edge",
-          "source": "89e5911077be49568df00f80e7c5e81e",
-          "target": "f02779c653d24e8ca8b00bdb769e8d48",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "bc6977635d844622933288c6c76d4a99",
           "edgeType": "Edge",
           "source": "f02779c653d24e8ca8b00bdb769e8d48",
@@ -865,6 +1073,135 @@
           "edgeType": "Edge",
           "source": "9314951929b547abb5e40f61aa7fda02",
           "target": "7d07cb835ae743728df77b65252b6f4a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5baec6ad73434ebd8c9868fbc12389ee",
+          "edgeType": "Edge",
+          "source": "ba630c050252484691f230818107ffe3",
+          "target": "a48118ccc04543edb10e36815edc98c0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "149d2d9acbfc4689855ca9e8412117bc",
+          "edgeType": "Edge",
+          "source": "a48118ccc04543edb10e36815edc98c0",
+          "target": "25022b14aec34f11aba0ad1cadc235f4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8312158b69ee43a4b33c4767463421ea",
+          "edgeType": "Edge",
+          "source": "25022b14aec34f11aba0ad1cadc235f4",
+          "target": "87d0f453316a4f938262857b0aed09ed",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "60a2d496a0944fc1b228fb2063ec28dd",
+          "edgeType": "Branch",
+          "source": "87d0f453316a4f938262857b0aed09ed",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.option_to_go_to_live_agent=",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "4f195edd8aea43088b8865c79827e2bf",
+          "edgeType": "Branch",
+          "source": "22f5a67f83f04605b047a36f8e1d24cc",
+          "target": "0a8f194f69c74a368ded655354cc4163",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.error=password",
+            "mode": "query"
+          },
+          "label": "password"
+        },
+        {
+          "id": "b7df2b204cef429eba6d8d2982dbe850",
+          "edgeType": "Branch",
+          "source": "9b31580b6a874296b41efe98357a2196",
+          "target": "0a8f194f69c74a368ded655354cc4163",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.did_unlock_work=",
+            "mode": "query"
+          },
+          "label": "no"
+        },
+        {
+          "id": "77342eed606a45d4b774f2254df45e5b",
+          "edgeType": "Edge",
+          "source": "a38256431c004b3c803cd2e926af4b94",
+          "target": "94b831834d814a3a8d58c6e95c8bcaf2",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8062f6ada6434d87be50a2ada0e26bd1",
+          "edgeType": "Branch",
+          "source": "94b831834d814a3a8d58c6e95c8bcaf2",
+          "target": "25022b14aec34f11aba0ad1cadc235f4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.email_manager=",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "b8c617abdf0549e5becba55da4fd2f7b",
+          "edgeType": "Branch",
+          "source": "94b831834d814a3a8d58c6e95c8bcaf2",
+          "target": "ebd9159713b949f7a4bfd4c0220105c2",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.email_manager=true",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "263de8e272f74fcf9c9a6518a7cd2e08",
+          "edgeType": "Edge",
+          "source": "ebd9159713b949f7a4bfd4c0220105c2",
+          "target": "c071ba0782dc4480adb3a0cb8c6bfae7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "97839e67db4a4f1c9d3b51bd9a7d4ff6",
+          "edgeType": "Edge",
+          "source": "c071ba0782dc4480adb3a0cb8c6bfae7",
+          "target": "71aef735448c4573852869dbbe5a8c5d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "bab10f6e943448ca9c62b5f79ab7144b",
+          "edgeType": "Edge",
+          "source": "0a8f194f69c74a368ded655354cc4163",
+          "target": "6c20557d73dc477eadcf9faa1ec7d65d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "72988417557c48d997f2fa093fe87d96",
+          "edgeType": "Edge",
+          "source": "6c20557d73dc477eadcf9faa1ec7d65d",
+          "target": "a38256431c004b3c803cd2e926af4b94",
           "sourcePort": "",
           "targetPort": ""
         }
@@ -887,7 +1224,7 @@
       "varType": "choice",
       "choices": [
         {
-          "label": "Account locked out",
+          "label": "The reference account is currently locked out",
           "value": "locked"
         },
         {
@@ -921,8 +1258,8 @@
     },
     "b1dd1e91b6e545c3be7bd901d1e8a171": {
       "id": "b1dd1e91b6e545c3be7bd901d1e8a171",
-      "name": "did_password_reset_work",
-      "label": "Did Password Reset Work",
+      "name": "has_this_helped_",
+      "label": "Has This Helped?",
       "varType": "boolean",
       "secure": false,
       "category": "vaInputs"
@@ -958,6 +1295,22 @@
       "label": "daveDad",
       "varType": "script",
       "category": "vaVars"
+    },
+    "cf8283fb68a54537a22883054f98cbf2": {
+      "id": "cf8283fb68a54537a22883054f98cbf2",
+      "name": "option_to_go_to_live_agent",
+      "label": "Option To Go To Live Agent",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs"
+    },
+    "814710412d874585a1e912f006c392e2": {
+      "id": "814710412d874585a1e912f006c392e2",
+      "name": "email_manager",
+      "label": "Email Manager",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs"
     }
   }
 }</graph>
@@ -977,14 +1330,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>NeedIt PR</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-24 14:12:40</sys_updated_on>
+        <sys_updated_on>2021-07-26 08:42:37</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>

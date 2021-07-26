@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="DELETE">
+        <cs_topic_id display_value="NeedIt PR">c75efd612f617010c2c7837cf699b6a6</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"variable_name":"email","nlu_entity":"","nlu_entity_label":""},{"variable_name":"line_manager","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>Windows Password Reset</nlu_intent>
+        <nlu_intent_label>Windows Password Reset</nlu_intent_label>
+        <nlu_model>ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642</nlu_model>
+        <nlu_model_label>Developer Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-24 14:09:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>cf5efd612f617010c2c7837cf699b6aa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cs_topic_language_cf5efd612f617010c2c7837cf699b6aa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-24 14:09:04</sys_updated_on>
+    </sys_cs_topic_language>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>8e84b626dbe2c450f492c59705961976</instance_id>
+        <instance_name>dev97948</instance_name>
+        <name>sys_cs_topic_language_cf5efd612f617010c2c7837cf699b6aa</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language"><sys_cs_topic_language action="INSERT_OR_UPDATE"><cs_topic_id display_value="NeedIt PR">c75efd612f617010c2c7837cf699b6a6</cs_topic_id><language_code>en</language_code><nlu_entities>[{"variable_name":"email","nlu_entity":"","nlu_entity_label":""},{"variable_name":"line_manager","nlu_entity":"","nlu_entity_label":""}]</nlu_entities><nlu_intent>Windows Password Reset</nlu_intent><nlu_intent_label>Windows Password Reset</nlu_intent_label><nlu_model>ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642</nlu_model><nlu_model_label>Developer Model</nlu_model_label><nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider><sys_class_name>sys_cs_topic_language</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-07-24 14:09:04</sys_created_on><sys_domain>global</sys_domain><sys_id>cf5efd612f617010c2c7837cf699b6aa</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>sys_cs_topic_language_cf5efd612f617010c2c7837cf699b6aa</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-07-24 14:09:04</sys_updated_on></sys_cs_topic_language></record_update>]]></payload>
+        <payload_hash>-1902407273</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>0ba3d8d82f613010c2c7837cf699b688</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-07-24 14:09:04</sys_created_on>
+        <sys_id>435efd612f617010c2c7837cf699b6ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17ad8d919360000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-07-24 14:09:04</sys_updated_on>
+        <type>CS Topic Language</type>
+        <update_guid>8b5efd614061701014baf6a9208353ab</update_guid>
+        <update_guid_history>8b5efd614061701014baf6a9208353ab:-1902407273</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-07-25 03:05:21</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_topic_language">sys_cs_topic_language</sys_db_object>
+        <sys_id>075ae033cd6d401485bd249fe02ce7c4</sys_id>
+        <sys_metadata>cf5efd612f617010c2c7837cf699b6aa</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_cs_topic_language_cf5efd612f617010c2c7837cf699b6aa</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_language_cf5efd612f617010c2c7837cf699b6aa">435efd612f617010c2c7837cf699b6ac</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-07-25 03:05:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
