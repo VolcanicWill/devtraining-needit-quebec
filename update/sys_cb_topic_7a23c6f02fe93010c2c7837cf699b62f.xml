@@ -481,16 +481,6 @@
           "stepType": "Decision",
           "name": "Decision"
         },
-        "9314951929b547abb5e40f61aa7fda02": {
-          "id": "9314951929b547abb5e40f61aa7fda02",
-          "name": "convert input to lowercase",
-          "script": "(function execute() {\n    \n    vaVars.daveDad = vaInputs.line_manager;\n    \n    const str = vaVars.daveDad;\n\n    const str2 = str.charAt(0).toUpperCase() + str.slice(1);\n\n    vaVars.daveDad = str2;\n    vaInputs.line_manager = vaVars.daveDad;\n})()\n",
-          "stepType": "ScriptAction",
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          }
-        },
         "a48118ccc04543edb10e36815edc98c0": {
           "id": "a48118ccc04543edb10e36815edc98c0",
           "stepType": "ReusableTopic",
@@ -1084,6 +1074,16 @@
             "value": "",
             "mode": "query"
           }
+        },
+        "1da26d7d8bda433b92f26a50b31c885a": {
+          "id": "1da26d7d8bda433b92f26a50b31c885a",
+          "name": "uppercase",
+          "script": "(function execute() {\n    \n    vaVars.daveDad = vaInputs.line_manager;\n    \n    const str = vaVars.daveDad;\n\n    const str2 = str.charAt(0).toUpperCase() + str.slice(1);\n\n    vaVars.daveDad = str2;\n    vaInputs.line_manager = vaVars.daveDad;\n})()",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
         }
       },
       "edges": [
@@ -1262,22 +1262,6 @@
             "mode": "query"
           },
           "label": "true"
-        },
-        {
-          "id": "bc6977635d844622933288c6c76d4a99",
-          "edgeType": "Edge",
-          "source": "f02779c653d24e8ca8b00bdb769e8d48",
-          "target": "9314951929b547abb5e40f61aa7fda02",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
-          "id": "e2d26916702540a4862f5d4d0191ee0a",
-          "edgeType": "Edge",
-          "source": "9314951929b547abb5e40f61aa7fda02",
-          "target": "7d07cb835ae743728df77b65252b6f4a",
-          "sourcePort": "",
-          "targetPort": ""
         },
         {
           "id": "5baec6ad73434ebd8c9868fbc12389ee",
@@ -1554,6 +1538,22 @@
           "target": "d8b2340b229e44a59734b9155d87ddb0",
           "sourcePort": "",
           "targetPort": ""
+        },
+        {
+          "id": "bc6977635d844622933288c6c76d4a99",
+          "edgeType": "Edge",
+          "source": "f02779c653d24e8ca8b00bdb769e8d48",
+          "target": "1da26d7d8bda433b92f26a50b31c885a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0f49db4d44d24edd817e1ecc9d42644e",
+          "edgeType": "Edge",
+          "source": "1da26d7d8bda433b92f26a50b31c885a",
+          "target": "7d07cb835ae743728df77b65252b6f4a",
+          "sourcePort": "",
+          "targetPort": ""
         }
       ]
     }
@@ -1705,14 +1705,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>72</sys_mod_count>
+        <sys_mod_count>74</sys_mod_count>
         <sys_name>NeedIt PR</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-26 10:50:21</sys_updated_on>
+        <sys_updated_on>2021-07-26 11:24:39</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
