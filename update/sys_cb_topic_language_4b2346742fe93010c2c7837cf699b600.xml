@@ -2,7 +2,7 @@
     <sys_cb_topic_language action="INSERT_OR_UPDATE">
         <cb_topic_id display_value="NeedIt PR">7a23c6f02fe93010c2c7837cf699b62f</cb_topic_id>
         <language_code>en</language_code>
-        <nlu_entities>[{"node_id":"aff54d95bcbe48d1bcf995dd7810f64f","variable_name":"email","nlu_entity":"","nlu_entity_label":""},{"node_id":"f02779c653d24e8ca8b00bdb769e8d48","variable_name":"line_manager","nlu_entity":"","nlu_entity_label":""},{"node_id":"25022b14aec34f11aba0ad1cadc235f4","variable_name":"option_to_go_to_live_agent","nlu_entity":"","nlu_entity_label":""},{"node_id":"71aef735448c4573852869dbbe5a8c5d","variable_name":"has_this_helped_","nlu_entity":"","nlu_entity_label":""},{"node_id":"a38256431c004b3c803cd2e926af4b94","variable_name":"email_manager","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_entities>[{"node_id":"aff54d95bcbe48d1bcf995dd7810f64f","variable_name":"email","nlu_entity":"","nlu_entity_label":""},{"node_id":"f02779c653d24e8ca8b00bdb769e8d48","variable_name":"line_manager","nlu_entity":"","nlu_entity_label":""},{"node_id":"25022b14aec34f11aba0ad1cadc235f4","variable_name":"option_to_go_to_live_agent","nlu_entity":"","nlu_entity_label":""},{"node_id":"71aef735448c4573852869dbbe5a8c5d","variable_name":"has_this_helped_","nlu_entity":"","nlu_entity_label":""},{"node_id":"a38256431c004b3c803cd2e926af4b94","variable_name":"email_manager","nlu_entity":"","nlu_entity_label":""},{"node_id":"93b2490dca794fe7ba4debc0583f3cbb","variable_name":"account_unlock_option","nlu_entity":"","nlu_entity_label":""},{"node_id":"feb0069144fb4115a89ec81726f69a94","variable_name":"useful","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
         <nlu_intent>Windows Password Reset</nlu_intent>
         <nlu_intent_label>Windows Password Reset</nlu_intent_label>
         <nlu_model>ml_x_654312_x_58872_needit_global_034bc0d42f613010c2c7837cf699b642</nlu_model>
@@ -20,6 +20,6 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_language_4b2346742fe93010c2c7837cf699b600</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-26 08:38:06</sys_updated_on>
+        <sys_updated_on>2021-07-26 10:47:32</sys_updated_on>
     </sys_cb_topic_language>
 </record_update>

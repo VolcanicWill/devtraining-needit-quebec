@@ -47,47 +47,6 @@
             "value": ""
           }
         },
-        "d0f7f058b33841a59649322ee98b66f2": {
-          "stepType": "ChoicePrompt",
-          "name": "error",
-          "prompt": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "What error message do you receive when trying to log in?"
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "confirmMessage": {
-            "value": "",
-            "mode": "simple"
-          },
-          "acknowledgeMsg": {
-            "value": "",
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          },
-          "skippable": {
-            "value": "",
-            "mode": "query"
-          },
-          "defaultValue": {
-            "value": "",
-            "mode": "simple"
-          },
-          "variableId": "806fa078f9f740e1924ec23c543cb00b",
-          "id": "d0f7f058b33841a59649322ee98b66f2",
-          "withNluUserInput": false,
-          "skipIfFulfilled": false
-        },
         "aff54d95bcbe48d1bcf995dd7810f64f": {
           "id": "aff54d95bcbe48d1bcf995dd7810f64f",
           "stepType": "Prompt",
@@ -263,7 +222,7 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "AD- Password reset/Account unlock"
+                      "text": "AD- Account unlock"
                     }
                   ]
                 }
@@ -304,7 +263,7 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "none"
+                      "text": "account unlocked"
                     }
                   ]
                 }
@@ -545,7 +504,16 @@
           "reusableTopicId": "7ca52ea02f613010c2c7837cf699b62a",
           "inputs": {
             "short_description": {
-              "value": "WOW Will you did it",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Cancelled. Unable to find details"
+                    }
+                  ]
+                }
+              ],
               "mode": "simple"
             },
             "caller": {
@@ -647,7 +615,7 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "Open"
+                      "text": "Resolved"
                     }
                   ]
                 }
@@ -772,29 +740,6 @@
           "skipIfFulfilled": false,
           "variableId": "814710412d874585a1e912f006c392e2"
         },
-        "0a8f194f69c74a368ded655354cc4163": {
-          "id": "0a8f194f69c74a368ded655354cc4163",
-          "stepType": "TextOutput",
-          "name": "process A",
-          "secure": false,
-          "value": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "I can send a request to your line manager requesting approval to reset your password."
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          }
-        },
         "94b831834d814a3a8d58c6e95c8bcaf2": {
           "id": "94b831834d814a3a8d58c6e95c8bcaf2",
           "stepType": "Decision",
@@ -857,7 +802,278 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Once approved your manager will be emailed the password and can then provide it to you."
+                    "text": "Once approved, your manager will be emailed the password and can then provide it to you."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "d88298a4080d46fb90b7632115210bbc": {
+          "id": "d88298a4080d46fb90b7632115210bbc",
+          "stepType": "TextOutput",
+          "name": "verification failed",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The system was unable verify your line manager."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "9a0bcb7e60f346b9b1e1654bfc7e6d2e": {
+          "id": "9a0bcb7e60f346b9b1e1654bfc7e6d2e",
+          "stepType": "LookupRecord",
+          "name": "look up lock out status",
+          "condition": {
+            "mode": "glide_query",
+            "value": "locked_out=true^email={{vaInputs.look_up_user.email}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "e6479cb8205c4c4e95779fe4c2cbe5cd"
+        },
+        "93b2490dca794fe7ba4debc0583f3cbb": {
+          "id": "93b2490dca794fe7ba4debc0583f3cbb",
+          "stepType": "Prompt",
+          "name": "account unlock option",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "It appears that your account is locked, would you like me to unlock it?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "eae51b9f84b041878ce532fa59b376a6"
+        },
+        "46d43589955f472bbe7ccd29e82a1315": {
+          "id": "46d43589955f472bbe7ccd29e82a1315",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "48e56471f2c64529adc00af19cd3a4cb": {
+          "id": "48e56471f2c64529adc00af19cd3a4cb",
+          "stepType": "TextOutput",
+          "name": "not locked message",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "I have checked our system and your account does not appear to be locked."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "baf93fa7467143aa9840c08b111a410f": {
+          "id": "baf93fa7467143aa9840c08b111a410f",
+          "stepType": "LookupRecord",
+          "name": "look up password status",
+          "condition": {
+            "mode": "glide_query",
+            "value": "password_needs_reset=true^email={{vaInputs.email}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "3d2f3ef9b13b427e8c91d9e71f5e5534"
+        },
+        "0a8f194f69c74a368ded655354cc4163": {
+          "id": "0a8f194f69c74a368ded655354cc4163",
+          "stepType": "TextOutput",
+          "name": "process A",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "I can send a request to your line manager requesting approval to reset your password."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "580ab24425b744f099e16a47ced80a09": {
+          "id": "580ab24425b744f099e16a47ced80a09",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "d8b2340b229e44a59734b9155d87ddb0": {
+          "id": "d8b2340b229e44a59734b9155d87ddb0",
+          "stepType": "LinkOutput",
+          "name": "Password Expired",
+          "url": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "https://account.activedirectory.windowsazure.com/ChangePassword.aspxEnd"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "label": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "How to update your Windows Password"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "header": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Click the below link to update your password."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "linkType": "single",
+          "introMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "listOfLinks": ""
+        },
+        "feb0069144fb4115a89ec81726f69a94": {
+          "id": "feb0069144fb4115a89ec81726f69a94",
+          "stepType": "Prompt",
+          "name": "useful",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Has this information been useful?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "6f6e54215e704ba3965a0866344a0899"
+        },
+        "8a176206e75b4075a67bf9503b87e3b8": {
+          "id": "8a176206e75b4075a67bf9503b87e3b8",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "6ea34095182849579eb3c2d2dfba1d48": {
+          "id": "6ea34095182849579eb3c2d2dfba1d48",
+          "stepType": "TextOutput",
+          "name": "expired",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "It looks like your password has expired and needs updating."
                   }
                 ]
               }
@@ -871,6 +1087,48 @@
         }
       },
       "edges": [
+        {
+          "id": "b7df2b204cef429eba6d8d2982dbe850",
+          "edgeType": "Branch",
+          "source": "9b31580b6a874296b41efe98357a2196",
+          "target": "baf93fa7467143aa9840c08b111a410f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.did_unlock_work=",
+            "mode": "query"
+          },
+          "label": "no"
+        },
+        {
+          "id": "d1cd1dd4df634754affc01b376cafd88",
+          "edgeType": "Branch",
+          "source": "7d07cb835ae743728df77b65252b6f4a",
+          "target": "9a0bcb7e60f346b9b1e1654bfc7e6d2e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.line_manager={{vaInputs.look_up_user.manager.first_name}}^vaInputs.ORline_manager={{vaInputs.look_up_user.manager.email}}",
+            "mode": "query"
+          },
+          "label": "true"
+        },
+        {
+          "id": "b07eb41cb9bf45eab59052d570ca9725",
+          "edgeType": "Edge",
+          "source": "f61dbc35436948e0be6dc146d2e26e9e",
+          "target": "7d3d2db71fc44221a31132fa923e2973",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "482fc6930eee44c5b35210a4825477c4",
+          "edgeType": "Edge",
+          "source": "9a0bcb7e60f346b9b1e1654bfc7e6d2e",
+          "target": "22f5a67f83f04605b047a36f8e1d24cc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
         {
           "id": "2ab8191d90a548ca93a399c1aea6863c",
           "edgeType": "Edge",
@@ -905,14 +1163,6 @@
           "edgeType": "Edge",
           "source": "ded56ef2edf244f8af6f7fb9ceaecfe4",
           "target": "aff54d95bcbe48d1bcf995dd7810f64f",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
-          "id": "082f0ff94c2a4d61b32a449e6b9788da",
-          "edgeType": "Edge",
-          "source": "d0f7f058b33841a59649322ee98b66f2",
-          "target": "22f5a67f83f04605b047a36f8e1d24cc",
           "sourcePort": "",
           "targetPort": ""
         },
@@ -980,27 +1230,6 @@
           "targetPort": ""
         },
         {
-          "id": "c3548b5af1ca42aba66543292ec5cf84",
-          "edgeType": "Branch",
-          "source": "22f5a67f83f04605b047a36f8e1d24cc",
-          "target": "f61dbc35436948e0be6dc146d2e26e9e",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.error=locked",
-            "mode": "query"
-          },
-          "label": "account locked"
-        },
-        {
-          "id": "b07eb41cb9bf45eab59052d570ca9725",
-          "edgeType": "Edge",
-          "source": "f61dbc35436948e0be6dc146d2e26e9e",
-          "target": "7d3d2db71fc44221a31132fa923e2973",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "45513cefb15a45e18ddce37f4642a34a",
           "edgeType": "Edge",
           "source": "da01116c389244c5a0bd71266ede383a",
@@ -1033,32 +1262,6 @@
             "mode": "query"
           },
           "label": "true"
-        },
-        {
-          "id": "d1cd1dd4df634754affc01b376cafd88",
-          "edgeType": "Branch",
-          "source": "7d07cb835ae743728df77b65252b6f4a",
-          "target": "d0f7f058b33841a59649322ee98b66f2",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.line_manager={{vaInputs.look_up_user.manager.first_name}}^vaInputs.ORline_manager={{vaInputs.look_up_user.manager.email}}",
-            "mode": "query"
-          },
-          "label": "true"
-        },
-        {
-          "id": "8077fefb66aa42178f1fc638518201ad",
-          "edgeType": "Branch",
-          "source": "7d07cb835ae743728df77b65252b6f4a",
-          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.line_manager!={{vaInputs.look_up_user.manager.first_name}}^vaInputs.ORline_manager!={{vaInputs.look_up_user.manager.email}}",
-            "mode": "query"
-          },
-          "label": "false"
         },
         {
           "id": "bc6977635d844622933288c6c76d4a99",
@@ -1114,32 +1317,6 @@
           "label": "No"
         },
         {
-          "id": "4f195edd8aea43088b8865c79827e2bf",
-          "edgeType": "Branch",
-          "source": "22f5a67f83f04605b047a36f8e1d24cc",
-          "target": "0a8f194f69c74a368ded655354cc4163",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.error=password",
-            "mode": "query"
-          },
-          "label": "password"
-        },
-        {
-          "id": "b7df2b204cef429eba6d8d2982dbe850",
-          "edgeType": "Branch",
-          "source": "9b31580b6a874296b41efe98357a2196",
-          "target": "0a8f194f69c74a368ded655354cc4163",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.did_unlock_work=",
-            "mode": "query"
-          },
-          "label": "no"
-        },
-        {
           "id": "77342eed606a45d4b774f2254df45e5b",
           "edgeType": "Edge",
           "source": "a38256431c004b3c803cd2e926af4b94",
@@ -1190,7 +1367,104 @@
           "targetPort": ""
         },
         {
-          "id": "bab10f6e943448ca9c62b5f79ab7144b",
+          "id": "72988417557c48d997f2fa093fe87d96",
+          "edgeType": "Edge",
+          "source": "6c20557d73dc477eadcf9faa1ec7d65d",
+          "target": "a38256431c004b3c803cd2e926af4b94",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8077fefb66aa42178f1fc638518201ad",
+          "edgeType": "Branch",
+          "source": "7d07cb835ae743728df77b65252b6f4a",
+          "target": "d88298a4080d46fb90b7632115210bbc",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.line_manager!={{vaInputs.look_up_user.manager.first_name}}^vaInputs.ORline_manager!={{vaInputs.look_up_user.manager.email}}",
+            "mode": "query"
+          },
+          "label": "false"
+        },
+        {
+          "id": "1ed2e4a6574548329f08c513ff52ae01",
+          "edgeType": "Edge",
+          "source": "d88298a4080d46fb90b7632115210bbc",
+          "target": "25022b14aec34f11aba0ad1cadc235f4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c3548b5af1ca42aba66543292ec5cf84",
+          "edgeType": "Branch",
+          "source": "22f5a67f83f04605b047a36f8e1d24cc",
+          "target": "93b2490dca794fe7ba4debc0583f3cbb",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_lock_out_statusISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "account locked"
+        },
+        {
+          "id": "04cc2718e58b4231985b1a79daa48f14",
+          "edgeType": "Edge",
+          "source": "93b2490dca794fe7ba4debc0583f3cbb",
+          "target": "46d43589955f472bbe7ccd29e82a1315",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7e6ef44a8843422b86257490464cf511",
+          "edgeType": "Branch",
+          "source": "46d43589955f472bbe7ccd29e82a1315",
+          "target": "f61dbc35436948e0be6dc146d2e26e9e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.account_unlock_option=true",
+            "mode": "query"
+          },
+          "label": "yes"
+        },
+        {
+          "id": "4c157a965ffe49c59931f79d731c539a",
+          "edgeType": "Branch",
+          "source": "46d43589955f472bbe7ccd29e82a1315",
+          "target": "baf93fa7467143aa9840c08b111a410f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.account_unlock_option=",
+            "mode": "query"
+          },
+          "label": "no"
+        },
+        {
+          "id": "4f195edd8aea43088b8865c79827e2bf",
+          "edgeType": "Branch",
+          "source": "22f5a67f83f04605b047a36f8e1d24cc",
+          "target": "48e56471f2c64529adc00af19cd3a4cb",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_lock_out_statusISEMPTY",
+            "mode": "query"
+          },
+          "label": "password"
+        },
+        {
+          "id": "583e090cf4bf4c30a0f9c6c2a1692162",
+          "edgeType": "Edge",
+          "source": "48e56471f2c64529adc00af19cd3a4cb",
+          "target": "baf93fa7467143aa9840c08b111a410f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "82dd332c5fc448a0bb2600fa9452ab1b",
           "edgeType": "Edge",
           "source": "0a8f194f69c74a368ded655354cc4163",
           "target": "6c20557d73dc477eadcf9faa1ec7d65d",
@@ -1198,10 +1472,86 @@
           "targetPort": ""
         },
         {
-          "id": "72988417557c48d997f2fa093fe87d96",
+          "id": "915bb26051394976bc9411621b677a84",
           "edgeType": "Edge",
-          "source": "6c20557d73dc477eadcf9faa1ec7d65d",
-          "target": "a38256431c004b3c803cd2e926af4b94",
+          "source": "baf93fa7467143aa9840c08b111a410f",
+          "target": "580ab24425b744f099e16a47ced80a09",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0289d0ad587d4b379a6f498e1af357d8",
+          "edgeType": "Branch",
+          "source": "580ab24425b744f099e16a47ced80a09",
+          "target": "0a8f194f69c74a368ded655354cc4163",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_password_statusISEMPTY",
+            "mode": "query"
+          },
+          "label": "not expired"
+        },
+        {
+          "id": "22d63ca2ed5f4a4ca4c6f9408acc688e",
+          "edgeType": "Edge",
+          "source": "d8b2340b229e44a59734b9155d87ddb0",
+          "target": "feb0069144fb4115a89ec81726f69a94",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "09b6883a14e44b39b94f5bd25341010d",
+          "edgeType": "Edge",
+          "source": "feb0069144fb4115a89ec81726f69a94",
+          "target": "8a176206e75b4075a67bf9503b87e3b8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8b482b9d335242b2970bb2726c4b8fe3",
+          "edgeType": "Branch",
+          "source": "8a176206e75b4075a67bf9503b87e3b8",
+          "target": "0a8f194f69c74a368ded655354cc4163",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.useful=",
+            "mode": "query"
+          },
+          "label": "no"
+        },
+        {
+          "id": "385688ed2499408c901285a4cba8aab3",
+          "edgeType": "Branch",
+          "source": "8a176206e75b4075a67bf9503b87e3b8",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.useful=true",
+            "mode": "query"
+          },
+          "label": "yes"
+        },
+        {
+          "id": "bc2ce58127904ea085c07114716e229c",
+          "edgeType": "Branch",
+          "source": "580ab24425b744f099e16a47ced80a09",
+          "target": "6ea34095182849579eb3c2d2dfba1d48",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_password_statusISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "expired"
+        },
+        {
+          "id": "157430f47d64477eb34739480107b0df",
+          "edgeType": "Edge",
+          "source": "6ea34095182849579eb3c2d2dfba1d48",
+          "target": "d8b2340b229e44a59734b9155d87ddb0",
           "sourcePort": "",
           "targetPort": ""
         }
@@ -1216,24 +1566,6 @@
       "name": "user",
       "table": "sys_user",
       "varType": "reference"
-    },
-    "806fa078f9f740e1924ec23c543cb00b": {
-      "id": "806fa078f9f740e1924ec23c543cb00b",
-      "name": "error",
-      "label": "Error",
-      "varType": "choice",
-      "choices": [
-        {
-          "label": "The reference account is currently locked out",
-          "value": "locked"
-        },
-        {
-          "label": "Username/Password incorrect",
-          "value": "password",
-          "checked": true
-        }
-      ],
-      "category": "vaInputs"
     },
     "db63fdffed9e42f197d6231b0f386f26": {
       "id": "db63fdffed9e42f197d6231b0f386f26",
@@ -1311,6 +1643,49 @@
       "varType": "boolean",
       "secure": false,
       "category": "vaInputs"
+    },
+    "df7bb449bd1c49909389c3bff63a6c07": {
+      "id": "df7bb449bd1c49909389c3bff63a6c07",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "status",
+      "label": "status",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "e6479cb8205c4c4e95779fe4c2cbe5cd": {
+      "id": "e6479cb8205c4c4e95779fe4c2cbe5cd",
+      "name": "look_up_lock_out_status",
+      "label": "Look Up Lock Out Status",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "eae51b9f84b041878ce532fa59b376a6": {
+      "id": "eae51b9f84b041878ce532fa59b376a6",
+      "name": "account_unlock_option",
+      "label": "Account Unlock Option",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs"
+    },
+    "3d2f3ef9b13b427e8c91d9e71f5e5534": {
+      "id": "3d2f3ef9b13b427e8c91d9e71f5e5534",
+      "name": "look_up_password_status",
+      "label": "Look Up Password Status",
+      "varType": "reference",
+      "table": "sys_user",
+      "category": "vaInputs"
+    },
+    "6f6e54215e704ba3965a0866344a0899": {
+      "id": "6f6e54215e704ba3965a0866344a0899",
+      "name": "useful",
+      "label": "Useful",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs"
     }
   }
 }</graph>
@@ -1330,14 +1705,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>72</sys_mod_count>
         <sys_name>NeedIt PR</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-26 08:42:37</sys_updated_on>
+        <sys_updated_on>2021-07-26 10:50:21</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
