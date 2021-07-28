@@ -1074,19 +1074,17 @@
             "value": "",
             "mode": "query"
           }
-        },
-        "1da26d7d8bda433b92f26a50b31c885a": {
-          "id": "1da26d7d8bda433b92f26a50b31c885a",
-          "name": "uppercase",
-          "script": "(function execute() {\n    \n    vaVars.daveDad = vaInputs.line_manager;\n    \n    const str = vaVars.daveDad;\n\n    const str2 = str.charAt(0).toUpperCase() + str.slice(1);\n\n    vaVars.daveDad = str2;\n    vaInputs.line_manager = vaVars.daveDad;\n})()",
-          "stepType": "ScriptAction",
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          }
         }
       },
       "edges": [
+        {
+          "id": "bc6977635d844622933288c6c76d4a99",
+          "edgeType": "Edge",
+          "source": "f02779c653d24e8ca8b00bdb769e8d48",
+          "target": "7d07cb835ae743728df77b65252b6f4a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
         {
           "id": "b7df2b204cef429eba6d8d2982dbe850",
           "edgeType": "Branch",
@@ -1108,7 +1106,7 @@
           "sourcePort": "",
           "targetPort": "",
           "expression": {
-            "value": "vaInputs.line_manager={{vaInputs.look_up_user.manager.first_name}}^vaInputs.ORline_manager={{vaInputs.look_up_user.manager.email}}",
+            "value": "vaInputs.line_manager={{vaInputs.look_up_user.manager.email}}",
             "mode": "query"
           },
           "label": "true"
@@ -1366,7 +1364,7 @@
           "sourcePort": "",
           "targetPort": "",
           "expression": {
-            "value": "vaInputs.line_manager!={{vaInputs.look_up_user.manager.first_name}}^vaInputs.ORline_manager!={{vaInputs.look_up_user.manager.email}}",
+            "value": "vaInputs.line_manager!={{vaInputs.look_up_user.manager.email}}",
             "mode": "query"
           },
           "label": "false"
@@ -1538,22 +1536,6 @@
           "target": "d8b2340b229e44a59734b9155d87ddb0",
           "sourcePort": "",
           "targetPort": ""
-        },
-        {
-          "id": "bc6977635d844622933288c6c76d4a99",
-          "edgeType": "Edge",
-          "source": "f02779c653d24e8ca8b00bdb769e8d48",
-          "target": "1da26d7d8bda433b92f26a50b31c885a",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
-          "id": "0f49db4d44d24edd817e1ecc9d42644e",
-          "edgeType": "Edge",
-          "source": "1da26d7d8bda433b92f26a50b31c885a",
-          "target": "7d07cb835ae743728df77b65252b6f4a",
-          "sourcePort": "",
-          "targetPort": ""
         }
       ]
     }
@@ -1617,17 +1599,6 @@
       "table": "sys_user",
       "category": "vaInputs"
     },
-    "7b75a2c125864fe0a9722217a300646b": {
-      "id": "7b75a2c125864fe0a9722217a300646b",
-      "value": {
-        "mode": "simple",
-        "value": "charles"
-      },
-      "name": "daveDad",
-      "label": "daveDad",
-      "varType": "script",
-      "category": "vaVars"
-    },
     "cf8283fb68a54537a22883054f98cbf2": {
       "id": "cf8283fb68a54537a22883054f98cbf2",
       "name": "option_to_go_to_live_agent",
@@ -1643,17 +1614,6 @@
       "varType": "boolean",
       "secure": false,
       "category": "vaInputs"
-    },
-    "df7bb449bd1c49909389c3bff63a6c07": {
-      "id": "df7bb449bd1c49909389c3bff63a6c07",
-      "value": {
-        "value": "",
-        "mode": "simple"
-      },
-      "name": "status",
-      "label": "status",
-      "varType": "script",
-      "category": "vaVars"
     },
     "e6479cb8205c4c4e95779fe4c2cbe5cd": {
       "id": "e6479cb8205c4c4e95779fe4c2cbe5cd",
@@ -1705,14 +1665,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>74</sys_mod_count>
+        <sys_mod_count>77</sys_mod_count>
         <sys_name>NeedIt PR</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-26 11:24:39</sys_updated_on>
+        <sys_updated_on>2021-07-28 09:36:52</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
