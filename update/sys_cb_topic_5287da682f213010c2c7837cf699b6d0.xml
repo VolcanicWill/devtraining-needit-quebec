@@ -30,7 +30,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Incident Logged"
+                    "text": ""
                   }
                 ]
               }
@@ -141,31 +141,6 @@
             "value": ""
           }
         },
-        "dcb96065a585419297cf1115678404ec": {
-          "id": "dcb96065a585419297cf1115678404ec",
-          "stepType": "RecordOutput",
-          "name": "Display Incident",
-          "variableId": "a1fb4d738df7460990c5735ad4a0e638",
-          "cardTemplate": "General",
-          "cardFields": {},
-          "mode": "variable",
-          "tableName": "incident",
-          "fields": [
-            "short_description"
-          ],
-          "cardDefinition": {
-            "name": "Record",
-            "value": "General"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          },
-          "condition": {
-            "mode": "glide_query",
-            "value": ""
-          }
-        },
         "0cf39989c87b43bdbc7455b5f95f3917": {
           "id": "0cf39989c87b43bdbc7455b5f95f3917",
           "stepType": "CrudAction",
@@ -192,18 +167,10 @@
       },
       "edges": [
         {
-          "id": "5853bf31fc1344f389ea0cb45ce4cc0d",
-          "edgeType": "Edge",
-          "source": "dcb96065a585419297cf1115678404ec",
-          "target": "6b05220c106e4b389ac20ecb79a2ea1f",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "d58c02f23e934c0d97f6fcf68a666f5b",
           "edgeType": "Edge",
           "source": "0cf39989c87b43bdbc7455b5f95f3917",
-          "target": "dcb96065a585419297cf1115678404ec",
+          "target": "6b05220c106e4b389ac20ecb79a2ea1f",
           "sourcePort": "",
           "targetPort": ""
         },
@@ -482,14 +449,14 @@
         <sys_created_on>2021-07-21 13:25:07</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>5287da682f213010c2c7837cf699b6d0</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Create INC</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_5287da682f213010c2c7837cf699b6d0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-26 08:46:32</sys_updated_on>
+        <sys_updated_on>2021-07-28 12:21:27</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>TOPIC_BLOCK</type>
         <variables/>

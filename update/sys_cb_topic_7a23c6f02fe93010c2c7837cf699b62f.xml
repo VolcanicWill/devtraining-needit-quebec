@@ -418,7 +418,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Please confirm your line managers full name or email address:"
+                    "text": "Please confirm your line managers full email address:"
                   }
                 ]
               }
@@ -699,7 +699,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Are you happy with me to move forward with this solution?"
+                    "text": "Would you like me to proceed with this?"
                   }
                 ]
               }
@@ -746,30 +746,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "An email has now been sent to your line manager requesting approval to reset the password."
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          }
-        },
-        "c071ba0782dc4480adb3a0cb8c6bfae7": {
-          "id": "c071ba0782dc4480adb3a0cb8c6bfae7",
-          "stepType": "TextOutput",
-          "name": "emailed B",
-          "secure": false,
-          "value": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "Once approved, your line manager will receive an email with the new password."
+                    "text": "An email has now been sent to your line manager containing the new password."
                   }
                 ]
               }
@@ -792,7 +769,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Once approved, your manager will be emailed the password and can then provide it to you."
+                    "text": "Once your manager receives your password, they can the provide it to you."
                   }
                 ]
               }
@@ -935,7 +912,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "I can send a request to your line manager requesting approval to reset your password."
+                    "text": "I can reset your password and email it to your line manager"
                   }
                 ]
               }
@@ -1074,9 +1051,248 @@
             "value": "",
             "mode": "query"
           }
+        },
+        "1b1544362e9140a89341a10f7ddcd3d8": {
+          "id": "1b1544362e9140a89341a10f7ddcd3d8",
+          "stepType": "ReusableTopic",
+          "name": "Create INC",
+          "fields": [],
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "reusableTopicChoice": "Create INC",
+          "reusableTopicId": "7ca52ea02f613010c2c7837cf699b62a",
+          "inputs": {
+            "short_description": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Expired Windows Password"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "caller": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user.sys_id}}",
+                        "displayValue": "Input Variables➛User➛Sys ID"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "additional_comments": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Expired Windows Password"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "company": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "scc"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "configuration_item": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "na"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "escalation": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "yes"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "impact": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "2"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "incident_state": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "open"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "priority": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "2"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "urgency": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "1"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            }
+          },
+          "variableIds": [],
+          "outputs": [],
+          "outdatedNote": false
+        },
+        "02de297b5c50443eb4c02c2648a86d59": {
+          "stepType": "ChoicePrompt",
+          "name": "Please select your current scenario ",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Are you  connected to the network"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "ca39761a39964d6f8ba2267936c51391",
+          "id": "02de297b5c50443eb4c02c2648a86d59",
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "6738ac3fd17a4092b9244cdcf4992e9f": {
+          "id": "6738ac3fd17a4092b9244cdcf4992e9f",
+          "stepType": "TextOutput",
+          "name": "network",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Make sure you are connected to the network using the VPN Guide below and then reattempt your password"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "5911ce4b36624b42a1652fec42d2cc1d": {
+          "id": "5911ce4b36624b42a1652fec42d2cc1d",
+          "stepType": "Decision",
+          "name": "Decision"
         }
       },
       "edges": [
+        {
+          "id": "263de8e272f74fcf9c9a6518a7cd2e08",
+          "edgeType": "Edge",
+          "source": "ebd9159713b949f7a4bfd4c0220105c2",
+          "target": "71aef735448c4573852869dbbe5a8c5d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
         {
           "id": "bc6977635d844622933288c6c76d4a99",
           "edgeType": "Edge",
@@ -1333,22 +1549,6 @@
           "label": "Yes"
         },
         {
-          "id": "263de8e272f74fcf9c9a6518a7cd2e08",
-          "edgeType": "Edge",
-          "source": "ebd9159713b949f7a4bfd4c0220105c2",
-          "target": "c071ba0782dc4480adb3a0cb8c6bfae7",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
-          "id": "97839e67db4a4f1c9d3b51bd9a7d4ff6",
-          "edgeType": "Edge",
-          "source": "c071ba0782dc4480adb3a0cb8c6bfae7",
-          "target": "71aef735448c4573852869dbbe5a8c5d",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "72988417557c48d997f2fa093fe87d96",
           "edgeType": "Edge",
           "source": "6c20557d73dc477eadcf9faa1ec7d65d",
@@ -1373,7 +1573,7 @@
           "id": "1ed2e4a6574548329f08c513ff52ae01",
           "edgeType": "Edge",
           "source": "d88298a4080d46fb90b7632115210bbc",
-          "target": "25022b14aec34f11aba0ad1cadc235f4",
+          "target": "a48118ccc04543edb10e36815edc98c0",
           "sourcePort": "",
           "targetPort": ""
         },
@@ -1462,46 +1662,12 @@
           "targetPort": ""
         },
         {
-          "id": "0289d0ad587d4b379a6f498e1af357d8",
-          "edgeType": "Branch",
-          "source": "580ab24425b744f099e16a47ced80a09",
-          "target": "0a8f194f69c74a368ded655354cc4163",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.look_up_password_statusISEMPTY",
-            "mode": "query"
-          },
-          "label": "not expired"
-        },
-        {
-          "id": "22d63ca2ed5f4a4ca4c6f9408acc688e",
-          "edgeType": "Edge",
-          "source": "d8b2340b229e44a59734b9155d87ddb0",
-          "target": "feb0069144fb4115a89ec81726f69a94",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "09b6883a14e44b39b94f5bd25341010d",
           "edgeType": "Edge",
           "source": "feb0069144fb4115a89ec81726f69a94",
           "target": "8a176206e75b4075a67bf9503b87e3b8",
           "sourcePort": "",
           "targetPort": ""
-        },
-        {
-          "id": "8b482b9d335242b2970bb2726c4b8fe3",
-          "edgeType": "Branch",
-          "source": "8a176206e75b4075a67bf9503b87e3b8",
-          "target": "0a8f194f69c74a368ded655354cc4163",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.useful=",
-            "mode": "query"
-          },
-          "label": "no"
         },
         {
           "id": "385688ed2499408c901285a4cba8aab3",
@@ -1536,6 +1702,103 @@
           "target": "d8b2340b229e44a59734b9155d87ddb0",
           "sourcePort": "",
           "targetPort": ""
+        },
+        {
+          "id": "22d63ca2ed5f4a4ca4c6f9408acc688e",
+          "edgeType": "Edge",
+          "source": "d8b2340b229e44a59734b9155d87ddb0",
+          "target": "1b1544362e9140a89341a10f7ddcd3d8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9ed02016b0c848418885251a7a843a26",
+          "edgeType": "Edge",
+          "source": "1b1544362e9140a89341a10f7ddcd3d8",
+          "target": "feb0069144fb4115a89ec81726f69a94",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0289d0ad587d4b379a6f498e1af357d8",
+          "edgeType": "Branch",
+          "source": "580ab24425b744f099e16a47ced80a09",
+          "target": "6738ac3fd17a4092b9244cdcf4992e9f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_password_statusISEMPTY",
+            "mode": "query"
+          },
+          "label": "not expired"
+        },
+        {
+          "id": "8b482b9d335242b2970bb2726c4b8fe3",
+          "edgeType": "Branch",
+          "source": "8a176206e75b4075a67bf9503b87e3b8",
+          "target": "6738ac3fd17a4092b9244cdcf4992e9f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.useful=",
+            "mode": "query"
+          },
+          "label": "no"
+        },
+        {
+          "id": "19f6c47ca67b4f7ab0d765b841100c18",
+          "edgeType": "Edge",
+          "source": "6738ac3fd17a4092b9244cdcf4992e9f",
+          "target": "02de297b5c50443eb4c02c2648a86d59",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "90dcfe26a37d4cdc91f578cbe3fb9002",
+          "edgeType": "Edge",
+          "source": "02de297b5c50443eb4c02c2648a86d59",
+          "target": "5911ce4b36624b42a1652fec42d2cc1d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "902d733288884351a8c19403fb23193d",
+          "edgeType": "Branch",
+          "source": "5911ce4b36624b42a1652fec42d2cc1d",
+          "target": "0a8f194f69c74a368ded655354cc4163",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.please_select_your_current_scenario_=connected_failed",
+            "mode": "query"
+          },
+          "label": "connected_failed"
+        },
+        {
+          "id": "7b55d851599c420d9aa2911dcb6c9601",
+          "edgeType": "Branch",
+          "source": "5911ce4b36624b42a1652fec42d2cc1d",
+          "target": "25022b14aec34f11aba0ad1cadc235f4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.please_select_your_current_scenario_=not_connected",
+            "mode": "query"
+          },
+          "label": "not_connected"
+        },
+        {
+          "id": "aff7e742f68a48e7acf082f9dd308fa4",
+          "edgeType": "Branch",
+          "source": "5911ce4b36624b42a1652fec42d2cc1d",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.please_select_your_current_scenario_=connected_passed",
+            "mode": "query"
+          },
+          "label": "connected"
         }
       ]
     }
@@ -1646,6 +1909,29 @@
       "varType": "boolean",
       "secure": false,
       "category": "vaInputs"
+    },
+    "ca39761a39964d6f8ba2267936c51391": {
+      "id": "ca39761a39964d6f8ba2267936c51391",
+      "name": "please_select_your_current_scenario_",
+      "label": "Please Select Your Current Scenario ",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "VPN connected but password still incorrect",
+          "value": "connected_failed"
+        },
+        {
+          "label": "VPN will not connect",
+          "value": "not_connected",
+          "checked": true
+        },
+        {
+          "label": "VPN connected and password now works",
+          "value": "connected_passed",
+          "checked": true
+        }
+      ],
+      "category": "vaInputs"
     }
   }
 }</graph>
@@ -1665,14 +1951,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>94</sys_mod_count>
         <sys_name>NeedIt PR</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-28 09:36:52</sys_updated_on>
+        <sys_updated_on>2021-07-28 12:20:32</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
