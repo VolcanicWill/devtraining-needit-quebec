@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="DELETE">
+        <cs_topic_id display_value="NeedIt PR">f1ccc13c2ffd3010c2c7837cf699b6f3</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"variable_name":"please_select_your_current_scenario_","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-03 12:52:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>4accc13c2ffd3010c2c7837cf699b6f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cs_topic_language_4accc13c2ffd3010c2c7837cf699b6f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-03 12:52:42</sys_updated_on>
+    </sys_cs_topic_language>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>8e84b626dbe2c450f492c59705961976</instance_id>
+        <instance_name>dev97948</instance_name>
+        <name>sys_cs_topic_language_4accc13c2ffd3010c2c7837cf699b6f7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="INSERT_OR_UPDATE">
+        <cs_topic_id display_value="NeedIt PR">f1ccc13c2ffd3010c2c7837cf699b6f3</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"variable_name":"please_select_your_current_scenario_","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-03 12:52:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>4accc13c2ffd3010c2c7837cf699b6f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cs_topic_language_4accc13c2ffd3010c2c7837cf699b6f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-03 12:52:42</sys_updated_on>
+    </sys_cs_topic_language>
+</record_update>]]></payload>
+        <payload_hash>-187901021</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>af5215812f313010c2c7837cf699b6c2</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>current</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-08-04 07:56:10</sys_created_on>
+        <sys_id>c4821d812f313010c2c7837cf699b6c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17b1029a5ad0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-08-04 07:56:10</sys_updated_on>
+        <type>CS Topic Language</type>
+        <update_guid>04821d81dd313010ce4cce21ab39ebc7</update_guid>
+        <update_guid_history>04821d81dd313010ce4cce21ab39ebc7:0,844419b4a9317010186f86d92c25c769:-485493871,4ecc45305b3170103dd4aad585646837:-1232937827</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2021-08-04 08:48:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_topic_language">sys_cs_topic_language</sys_db_object>
+        <sys_id>0d42c5c5f39648b8a7e0d28befe301d9</sys_id>
+        <sys_metadata>4accc13c2ffd3010c2c7837cf699b6f7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_cs_topic_language_4accc13c2ffd3010c2c7837cf699b6f7</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_language_4accc13c2ffd3010c2c7837cf699b6f7">c4821d812f313010c2c7837cf699b6c7</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-08-04 08:48:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

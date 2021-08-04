@@ -116,7 +116,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "I have now unlocked your account. Has this resolved your issue?"
+                    "text": "Are you now able to access your account?"
                   }
                 ]
               }
@@ -827,52 +827,6 @@
           },
           "variableId": "e6479cb8205c4c4e95779fe4c2cbe5cd"
         },
-        "93b2490dca794fe7ba4debc0583f3cbb": {
-          "id": "93b2490dca794fe7ba4debc0583f3cbb",
-          "stepType": "Prompt",
-          "name": "account unlock option",
-          "prompt": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "It appears that your account is locked, would you like me to unlock it?"
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "confirmMessage": {
-            "value": "",
-            "mode": "simple"
-          },
-          "acknowledgeMsg": {
-            "value": "",
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          },
-          "skippable": {
-            "value": "",
-            "mode": "query"
-          },
-          "defaultValue": {
-            "value": "",
-            "mode": "simple"
-          },
-          "withNluUserInput": false,
-          "skipIfFulfilled": false,
-          "variableId": "eae51b9f84b041878ce532fa59b376a6"
-        },
-        "46d43589955f472bbe7ccd29e82a1315": {
-          "id": "46d43589955f472bbe7ccd29e82a1315",
-          "stepType": "Decision",
-          "name": "Decision"
-        },
         "48e56471f2c64529adc00af19cd3a4cb": {
           "id": "48e56471f2c64529adc00af19cd3a4cb",
           "stepType": "TextOutput",
@@ -1291,9 +1245,40 @@
           "id": "5911ce4b36624b42a1652fec42d2cc1d",
           "stepType": "Decision",
           "name": "Decision"
+        },
+        "e71c9654b43e454d8198f859c6d32324": {
+          "id": "e71c9654b43e454d8198f859c6d32324",
+          "stepType": "TextOutput",
+          "name": "unlocked",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Your account appeared to be locked out. I have now unlocked this for you. Please  retry your password."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
         }
       },
       "edges": [
+        {
+          "id": "f23c1015c1084129a8d6b9523083d4b9",
+          "edgeType": "Edge",
+          "source": "e71c9654b43e454d8198f859c6d32324",
+          "target": "f61dbc35436948e0be6dc146d2e26e9e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
         {
           "id": "60a2d496a0944fc1b228fb2063ec28dd",
           "edgeType": "Branch",
@@ -1587,53 +1572,6 @@
           "targetPort": ""
         },
         {
-          "id": "c3548b5af1ca42aba66543292ec5cf84",
-          "edgeType": "Branch",
-          "source": "22f5a67f83f04605b047a36f8e1d24cc",
-          "target": "93b2490dca794fe7ba4debc0583f3cbb",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.look_up_lock_out_statusISNOTEMPTY",
-            "mode": "query"
-          },
-          "label": "account locked"
-        },
-        {
-          "id": "04cc2718e58b4231985b1a79daa48f14",
-          "edgeType": "Edge",
-          "source": "93b2490dca794fe7ba4debc0583f3cbb",
-          "target": "46d43589955f472bbe7ccd29e82a1315",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
-          "id": "7e6ef44a8843422b86257490464cf511",
-          "edgeType": "Branch",
-          "source": "46d43589955f472bbe7ccd29e82a1315",
-          "target": "f61dbc35436948e0be6dc146d2e26e9e",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.account_unlock_option=true",
-            "mode": "query"
-          },
-          "label": "yes"
-        },
-        {
-          "id": "4c157a965ffe49c59931f79d731c539a",
-          "edgeType": "Branch",
-          "source": "46d43589955f472bbe7ccd29e82a1315",
-          "target": "baf93fa7467143aa9840c08b111a410f",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.account_unlock_option=",
-            "mode": "query"
-          },
-          "label": "no"
-        },
-        {
           "id": "4f195edd8aea43088b8865c79827e2bf",
           "edgeType": "Branch",
           "source": "22f5a67f83f04605b047a36f8e1d24cc",
@@ -1795,6 +1733,19 @@
             "mode": "query"
           },
           "label": "connected"
+        },
+        {
+          "id": "c3548b5af1ca42aba66543292ec5cf84",
+          "edgeType": "Branch",
+          "source": "22f5a67f83f04605b047a36f8e1d24cc",
+          "target": "e71c9654b43e454d8198f859c6d32324",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_lock_out_statusISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "account locked"
         }
       ]
     }
@@ -1882,14 +1833,6 @@
       "table": "sys_user",
       "category": "vaInputs"
     },
-    "eae51b9f84b041878ce532fa59b376a6": {
-      "id": "eae51b9f84b041878ce532fa59b376a6",
-      "name": "account_unlock_option",
-      "label": "Account Unlock Option",
-      "varType": "boolean",
-      "secure": false,
-      "category": "vaInputs"
-    },
     "3d2f3ef9b13b427e8c91d9e71f5e5534": {
       "id": "3d2f3ef9b13b427e8c91d9e71f5e5534",
       "name": "look_up_password_status",
@@ -1943,14 +1886,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>111</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>Windows Account Unlock/Password Reset</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-03 13:07:20</sys_updated_on>
+        <sys_updated_on>2021-08-04 14:06:51</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
