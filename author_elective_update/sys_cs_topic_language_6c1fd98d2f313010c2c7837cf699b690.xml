@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
     <sys_cs_topic_language action="DELETE">
-        <cs_topic_id display_value="NeedIt PR">8cc5f3a02ff93010c2c7837cf699b600</cs_topic_id>
+        <cs_topic_id display_value="Windows Account Unlock/Password Reset">d01f99c12f313010c2c7837cf699b6e1</cs_topic_id>
         <language_code>en</language_code>
-        <nlu_entities>[{"variable_name":"please_select_your_current_scenario_","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_entities>[{"variable_name":"please_select_your_current_scenario_","nlu_entity":"","nlu_entity_label":""},{"variable_name":"useful","nlu_entity":"","nlu_entity_label":""},{"variable_name":"option_to_go_to_live_agent","nlu_entity":"","nlu_entity_label":""},{"variable_name":"has_this_helped_","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
         <nlu_intent/>
         <nlu_intent_label/>
         <nlu_model/>
@@ -10,17 +10,17 @@
         <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
         <sys_class_name>sys_cs_topic_language</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-08-03 06:32:29</sys_created_on>
+        <sys_created_on>2021-08-04 08:51:05</sys_created_on>
         <sys_domain>global</sys_domain>
-        <sys_id>54c537a02ff93010c2c7837cf699b628</sys_id>
+        <sys_id>6c1fd98d2f313010c2c7837cf699b690</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_cs_topic_language_54c537a02ff93010c2c7837cf699b628</sys_update_name>
+        <sys_update_name>sys_cs_topic_language_6c1fd98d2f313010c2c7837cf699b690</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-03 06:32:29</sys_updated_on>
+        <sys_updated_on>2021-08-04 08:51:05</sys_updated_on>
     </sys_cs_topic_language>
 <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
@@ -28,12 +28,12 @@
         <file_path/>
         <instance_id>8e84b626dbe2c450f492c59705961976</instance_id>
         <instance_name>dev97948</instance_name>
-        <name>sys_cs_topic_language_54c537a02ff93010c2c7837cf699b628</name>
+        <name>sys_cs_topic_language_6c1fd98d2f313010c2c7837cf699b690</name>
         <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
     <sys_cs_topic_language action="INSERT_OR_UPDATE">
-        <cs_topic_id display_value="NeedIt PR">8cc5f3a02ff93010c2c7837cf699b600</cs_topic_id>
+        <cs_topic_id display_value="Windows Account Unlock/Password Reset">d01f99c12f313010c2c7837cf699b6e1</cs_topic_id>
         <language_code>en</language_code>
-        <nlu_entities>[{"variable_name":"please_select_your_current_scenario_","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_entities>[{"variable_name":"please_select_your_current_scenario_","nlu_entity":"","nlu_entity_label":""},{"variable_name":"useful","nlu_entity":"","nlu_entity_label":""},{"variable_name":"option_to_go_to_live_agent","nlu_entity":"","nlu_entity_label":""},{"variable_name":"has_this_helped_","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
         <nlu_intent/>
         <nlu_intent_label/>
         <nlu_model/>
@@ -41,44 +41,44 @@
         <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
         <sys_class_name>sys_cs_topic_language</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-08-03 06:32:29</sys_created_on>
+        <sys_created_on>2021-08-04 08:51:05</sys_created_on>
         <sys_domain>global</sys_domain>
-        <sys_id>54c537a02ff93010c2c7837cf699b628</sys_id>
+        <sys_id>6c1fd98d2f313010c2c7837cf699b690</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_cs_topic_language_54c537a02ff93010c2c7837cf699b628</sys_update_name>
+        <sys_update_name>sys_cs_topic_language_6c1fd98d2f313010c2c7837cf699b690</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-03 06:32:29</sys_updated_on>
+        <sys_updated_on>2021-08-04 08:51:05</sys_updated_on>
     </sys_cs_topic_language>
 </record_update>]]></payload>
-        <payload_hash>-2106794021</payload_hash>
+        <payload_hash>-1822669211</payload_hash>
         <record_name/>
         <reverted_from/>
-        <source>af5215812f313010c2c7837cf699b6c2</source>
+        <source>68e71e952f313010c2c7837cf699b681</source>
         <source_table>sys_upgrade_history</source_table>
-        <state>previous</state>
+        <state>current</state>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-08-04 07:56:10</sys_created_on>
-        <sys_id>48821d812f313010c2c7837cf699b6ca</sys_id>
+        <sys_created_on>2021-08-05 07:38:17</sys_created_on>
+        <sys_id>440856d52f313010c2c7837cf699b657</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_recorded_at>17b1029a6050000001</sys_recorded_at>
+        <sys_recorded_at>17b153fa44b0000001</sys_recorded_at>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-04 07:56:10</sys_updated_on>
+        <sys_updated_on>2021-08-05 07:38:17</sys_updated_on>
         <type>CS Topic Language</type>
-        <update_guid>84821d812c3130107f1c9baac6ecaeca</update_guid>
-        <update_guid_history>84821d812c3130107f1c9baac6ecaeca:0,e84419b4d63170105217c04f109990c9:415444425,d8c537a0fbf93010691142f7dc0ccc29:-331999531</update_guid_history>
+        <update_guid>b3f756d5363130102932e28792275257</update_guid>
+        <update_guid_history>b3f756d5363130102932e28792275257:0,4dcdea019675301088dad05fb1d9bb85:1346155327,e01fd98ddb3130100b5408205309f192:-1910061645</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
         <sys_audit_delete/>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>system</sys_created_by>
-        <sys_created_on>2021-08-04 08:48:24</sys_created_on>
+        <sys_created_on>2021-08-05 07:38:31</sys_created_on>
         <sys_db_object display_value="" name="sys_cs_topic_language">sys_cs_topic_language</sys_db_object>
-        <sys_id>108a9003541e47de8859e6ddc4c6b7a9</sys_id>
-        <sys_metadata>54c537a02ff93010c2c7837cf699b628</sys_metadata>
+        <sys_id>15e6dde72f5b4c46a8c3d85e159e91d9</sys_id>
+        <sys_metadata>6c1fd98d2f313010c2c7837cf699b690</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -86,9 +86,9 @@
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
-        <sys_update_name>sys_cs_topic_language_54c537a02ff93010c2c7837cf699b628</sys_update_name>
-        <sys_update_version display_value="sys_cs_topic_language_54c537a02ff93010c2c7837cf699b628">48821d812f313010c2c7837cf699b6ca</sys_update_version>
+        <sys_update_name>sys_cs_topic_language_6c1fd98d2f313010c2c7837cf699b690</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_language_6c1fd98d2f313010c2c7837cf699b690">440856d52f313010c2c7837cf699b657</sys_update_version>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2021-08-04 08:48:24</sys_updated_on>
+        <sys_updated_on>2021-08-05 07:38:31</sys_updated_on>
     </sys_metadata_delete>
 </record_update>
