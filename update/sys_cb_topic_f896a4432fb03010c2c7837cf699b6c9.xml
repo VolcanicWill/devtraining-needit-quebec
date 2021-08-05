@@ -269,89 +269,6 @@
           "stepType": "Decision",
           "name": "Decision"
         },
-        "6ff508404a4d4a7dbd9524acc3abb6af": {
-          "id": "6ff508404a4d4a7dbd9524acc3abb6af",
-          "stepType": "Prompt",
-          "name": "new description",
-          "prompt": {
-            "value": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "text": "type a new description"
-                  }
-                ]
-              }
-            ],
-            "mode": "simple"
-          },
-          "confirmMessage": {
-            "value": "",
-            "mode": "simple"
-          },
-          "acknowledgeMsg": {
-            "value": "",
-            "mode": "simple"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          },
-          "skippable": {
-            "value": "",
-            "mode": "query"
-          },
-          "defaultValue": {
-            "value": "",
-            "mode": "simple"
-          },
-          "withNluUserInput": false,
-          "skipIfFulfilled": false,
-          "variableId": "901cac69134546da880cd6bc7a60d3d2",
-          "inputType": {
-            "format": "Text",
-            "script": ""
-          }
-        },
-        "f380ec7abf934aab9877c41878d00d94": {
-          "id": "f380ec7abf934aab9877c41878d00d94",
-          "stepType": "CrudAction",
-          "name": "update description",
-          "template": "short_description={{vaInputs.new_description}}",
-          "mode": "update",
-          "record": "35a4f64d82fb4f4fa71d2df21638ab98",
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          },
-          "variableId": "9c5588efe7d044e78047dc20799db0d4"
-        },
-        "47411e35216548ee8564b501b42f5ba5": {
-          "id": "47411e35216548ee8564b501b42f5ba5",
-          "stepType": "RecordOutput",
-          "name": "card",
-          "variableId": "35a4f64d82fb4f4fa71d2df21638ab98",
-          "cardTemplate": "General",
-          "cardFields": {},
-          "mode": "variable",
-          "tableName": "x_58872_needit_needit",
-          "fields": [
-            "short_description"
-          ],
-          "cardDefinition": {
-            "name": "Record",
-            "value": "General"
-          },
-          "applicability": {
-            "value": "",
-            "mode": "query"
-          },
-          "condition": {
-            "mode": "glide_query",
-            "value": ""
-          }
-        },
         "d648e0a1d56e44afb1dd0520aa923b13": {
           "id": "d648e0a1d56e44afb1dd0520aa923b13",
           "name": "wow",
@@ -394,6 +311,14 @@
       },
       "edges": [
         {
+          "id": "d80f89d2c2374802b933a28ef2ad7a57",
+          "edgeType": "Edge",
+          "source": "f697f98d542240b4ad7493c1d5c0c174",
+          "target": "ab6f1d44246d4700aadc75f2c3bd0c6a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
           "id": "6fd41a82003146fd9c0ebf3642c1760a",
           "edgeType": "Branch",
           "source": "952de284d23e4939b1a02e2924c2f7e3",
@@ -402,7 +327,7 @@
           "targetPort": "",
           "expression": {
             "mode": "script",
-            "value": "(function execute() {\n\t    // If the value of search_count is less than 3, return true\n\t    // otherwise, return false\n\t    if (vaVars.search_count &lt; 1)\n\t        return false;\n\t    else\n\t        return true;\n\t})()"
+            "value": "(function execute() {\n\t    // If the value of search_count is less than 3, return true\n\t    // otherwise, return false\n\t    if (vaVars.search_count &lt; 3)\n\t        return false;\n\t    else\n\t        return true;\n\t})()"
           },
           "label": "more than 3"
         },
@@ -423,17 +348,9 @@
           "targetPort": "",
           "expression": {
             "mode": "script",
-            "value": "(function execute() {\n\t    // If the value of search_count is less than 3, return true\n\t    // otherwise, return false\n\t    if (vaVars.search_count &lt; 1)\n\t        return true;\n\t    else\n\t        return false;\n\t})()"
+            "value": "(function execute() {\n\t    // If the value of search_count is less than 3, return true\n\t    // otherwise, return false\n\t    if (vaVars.search_count &lt; 3)\n\t        return true;\n\t    else\n\t        return false;\n\t})()"
           },
           "label": "less than 3"
-        },
-        {
-          "id": "2b6ee5c3c9d04c77aa9c3a96c5e992bd",
-          "edgeType": "Edge",
-          "source": "6ff508404a4d4a7dbd9524acc3abb6af",
-          "target": "f380ec7abf934aab9877c41878d00d94",
-          "sourcePort": "",
-          "targetPort": ""
         },
         {
           "id": "b5b599f3faf440fb88b592afff7f15e8",
@@ -479,30 +396,6 @@
             "mode": "query"
           },
           "label": "no"
-        },
-        {
-          "id": "d80f89d2c2374802b933a28ef2ad7a57",
-          "edgeType": "Edge",
-          "source": "f697f98d542240b4ad7493c1d5c0c174",
-          "target": "6ff508404a4d4a7dbd9524acc3abb6af",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
-          "id": "e4a3a1dadd104e369d11d8dc525ade6f",
-          "edgeType": "Edge",
-          "source": "f380ec7abf934aab9877c41878d00d94",
-          "target": "47411e35216548ee8564b501b42f5ba5",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
-          "id": "93ca04b5a60f4eb4b2528d1e1f1f01af",
-          "edgeType": "Edge",
-          "source": "47411e35216548ee8564b501b42f5ba5",
-          "target": "ab6f1d44246d4700aadc75f2c3bd0c6a",
-          "sourcePort": "",
-          "targetPort": ""
         },
         {
           "id": "8afb91391d4947eaa31b6c9fe15f243b",
@@ -602,28 +495,6 @@
       "secure": false,
       "category": "vaInputs"
     },
-    "901cac69134546da880cd6bc7a60d3d2": {
-      "id": "901cac69134546da880cd6bc7a60d3d2",
-      "name": "new_description",
-      "label": "New Description",
-      "varType": "string",
-      "secure": false,
-      "category": "vaInputs",
-      "encryptionHashFunction": "SHA-256",
-      "encryptionSalt": {
-        "value": "MTYyNDU1MjkzOTQ1NiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
-        "mode": "simple"
-      }
-    },
-    "9c5588efe7d044e78047dc20799db0d4": {
-      "id": "9c5588efe7d044e78047dc20799db0d4",
-      "name": "update_description",
-      "label": "Update Description",
-      "varType": "reference",
-      "table": "x_58872_needit_needit",
-      "inactive": true,
-      "category": "vaInputs"
-    },
     "4e6d8c12433c4cc38f437663d6520c54": {
       "id": "4e6d8c12433c4cc38f437663d6520c54",
       "value": {
@@ -653,14 +524,14 @@
         <sys_created_on>2021-06-21 16:49:19</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>f896a4432fb03010c2c7837cf699b6c9</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>Update NeedIt Records</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_f896a4432fb03010c2c7837cf699b6c9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-06-29 15:38:46</sys_updated_on>
+        <sys_updated_on>2021-08-05 13:12:49</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>

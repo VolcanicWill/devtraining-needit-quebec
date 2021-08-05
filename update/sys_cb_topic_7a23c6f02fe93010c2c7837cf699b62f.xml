@@ -397,7 +397,7 @@
         "ba630c050252484691f230818107ffe3": {
           "id": "ba630c050252484691f230818107ffe3",
           "stepType": "TextOutput",
-          "name": "no match",
+          "name": "email verification failed",
           "secure": false,
           "value": {
             "value": [
@@ -405,7 +405,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Sorry, you do not  appear to be in the organisation."
+                    "text": "Sorry, that email address does not  appear to be in the organisation."
                   }
                 ]
               }
@@ -778,7 +778,7 @@
         "d88298a4080d46fb90b7632115210bbc": {
           "id": "d88298a4080d46fb90b7632115210bbc",
           "stepType": "TextOutput",
-          "name": "verification failed",
+          "name": "manager verification failed",
           "secure": false,
           "value": {
             "value": [
@@ -1253,9 +1253,156 @@
             "value": "",
             "mode": "query"
           }
+        },
+        "6933bed5ed1248ee94ceeff57107f20c": {
+          "id": "6933bed5ed1248ee94ceeff57107f20c",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "6ee27b2a2a74424299965ade52893904": {
+          "id": "6ee27b2a2a74424299965ade52893904",
+          "stepType": "TextOutput",
+          "name": "try again",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Let's try again. You have "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaVars.stringValue}}",
+                      "displayValue": "Script Variables➛stringValue"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": " attempts left."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a27e3ad0e67547f48f237f3e37b0cf4e": {
+          "id": "a27e3ad0e67547f48f237f3e37b0cf4e",
+          "name": "attempt counter",
+          "script": "(function execute() {\n    vaVars.attempt = vaVars.attempt -1;\n    var number = vaVars.attempt;\n    var n = number.toString();\n    vaVars.stringValue = n;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "106e52311c68493aba0b69ffa8fa1d6c": {
+          "id": "106e52311c68493aba0b69ffa8fa1d6c",
+          "name": "verification attempt counter",
+          "script": "(function execute() {\n    /* Count the number of times the user incorrectly types and email\n    */\n\n    vaVars.incorrectEmailInput = vaVars.incorrectEmailInput +  1 ;\n    \n\n    \n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "2c26432969574bafb363ca6a568a4896": {
+          "id": "2c26432969574bafb363ca6a568a4896",
+          "name": "verification attempt 2 counter",
+          "script": "(function execute() {\n    /* Count the number of times the user incorrectly types and email\n    */\n\n    vaVars.incorrectManagerInput = vaVars.incorrectManagerInput +  1 ;\n    \n\n    \n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "9ec4418775ce4850b0ce94c3c27a9227": {
+          "id": "9ec4418775ce4850b0ce94c3c27a9227",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "28c3278aaa2a484d99446564bce4e489": {
+          "id": "28c3278aaa2a484d99446564bce4e489",
+          "name": "attempt counter 2",
+          "script": "(function execute() {\n    vaVars.attempt2 = vaVars.attempt2 -1;\n    var number = vaVars.attempt2;\n    var n = number.toString();\n    vaVars.stringValue2 = n;\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "7a14184af92940138d93f7ee6e553a47": {
+          "id": "7a14184af92940138d93f7ee6e553a47",
+          "stepType": "TextOutput",
+          "name": "try again",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Let's try again. You have "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaVars.stringValue2}}",
+                      "displayValue": "Script Variables➛stringValue2"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": " attempts left."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
         }
       },
       "edges": [
+        {
+          "id": "d8533b5b72fc4b1c819b589c8d0eba41",
+          "edgeType": "Branch",
+          "source": "8e8057dd160c4072a96cec6352160775",
+          "target": "ba630c050252484691f230818107ffe3",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_userISEMPTY",
+            "mode": "query"
+          },
+          "label": "false"
+        },
+        {
+          "id": "5a9625bdf1ef4ce2bf5987a59aedb1ac",
+          "edgeType": "Edge",
+          "source": "6ee27b2a2a74424299965ade52893904",
+          "target": "aff54d95bcbe48d1bcf995dd7810f64f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
         {
           "id": "f23c1015c1084129a8d6b9523083d4b9",
           "edgeType": "Edge",
@@ -1444,19 +1591,6 @@
           "targetPort": ""
         },
         {
-          "id": "d8533b5b72fc4b1c819b589c8d0eba41",
-          "edgeType": "Branch",
-          "source": "8e8057dd160c4072a96cec6352160775",
-          "target": "ba630c050252484691f230818107ffe3",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.look_up_userISEMPTY",
-            "mode": "query"
-          },
-          "label": "false"
-        },
-        {
           "id": "cf80094d4606475b8011a86d896e1728",
           "edgeType": "Branch",
           "source": "8e8057dd160c4072a96cec6352160775",
@@ -1468,14 +1602,6 @@
             "mode": "query"
           },
           "label": "true"
-        },
-        {
-          "id": "5baec6ad73434ebd8c9868fbc12389ee",
-          "edgeType": "Edge",
-          "source": "ba630c050252484691f230818107ffe3",
-          "target": "a48118ccc04543edb10e36815edc98c0",
-          "sourcePort": "",
-          "targetPort": ""
         },
         {
           "id": "149d2d9acbfc4689855ca9e8412117bc",
@@ -1547,14 +1673,6 @@
             "mode": "query"
           },
           "label": "false"
-        },
-        {
-          "id": "1ed2e4a6574548329f08c513ff52ae01",
-          "edgeType": "Edge",
-          "source": "d88298a4080d46fb90b7632115210bbc",
-          "target": "a48118ccc04543edb10e36815edc98c0",
-          "sourcePort": "",
-          "targetPort": ""
         },
         {
           "id": "4f195edd8aea43088b8865c79827e2bf",
@@ -1731,6 +1849,114 @@
             "mode": "query"
           },
           "label": "account locked"
+        },
+        {
+          "id": "f155d06512e94d84adfa9b740b3f95a1",
+          "edgeType": "Branch",
+          "source": "6933bed5ed1248ee94ceeff57107f20c",
+          "target": "a48118ccc04543edb10e36815edc98c0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    \n    \n    if(vaVars.incorrectEmailInput &lt; 3)\n    return false;\n    else\n    return true;\n})()\n"
+          },
+          "label": "attempts more than 3"
+        },
+        {
+          "id": "028408ed9ed74ea895bba43ffa35ad2a",
+          "edgeType": "Branch",
+          "source": "6933bed5ed1248ee94ceeff57107f20c",
+          "target": "a27e3ad0e67547f48f237f3e37b0cf4e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    \n    if(vaVars.incorrectEmailInput &lt; 3)\n\n    return true;\n\n    else\n    return false;\n})()\n"
+          },
+          "label": "attempts less than 3"
+        },
+        {
+          "id": "612053c2a03b4c4a8715f08c8d25e176",
+          "edgeType": "Edge",
+          "source": "a27e3ad0e67547f48f237f3e37b0cf4e",
+          "target": "6ee27b2a2a74424299965ade52893904",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5baec6ad73434ebd8c9868fbc12389ee",
+          "edgeType": "Edge",
+          "source": "ba630c050252484691f230818107ffe3",
+          "target": "106e52311c68493aba0b69ffa8fa1d6c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "020e5ac7fbab47429a0671ef29b6e65d",
+          "edgeType": "Edge",
+          "source": "106e52311c68493aba0b69ffa8fa1d6c",
+          "target": "6933bed5ed1248ee94ceeff57107f20c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1ed2e4a6574548329f08c513ff52ae01",
+          "edgeType": "Edge",
+          "source": "d88298a4080d46fb90b7632115210bbc",
+          "target": "2c26432969574bafb363ca6a568a4896",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ec1ca7905d8e4913894c13bc0f4efac4",
+          "edgeType": "Edge",
+          "source": "2c26432969574bafb363ca6a568a4896",
+          "target": "9ec4418775ce4850b0ce94c3c27a9227",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5c14717643a84739aeb2df1713b63e43",
+          "edgeType": "Branch",
+          "source": "9ec4418775ce4850b0ce94c3c27a9227",
+          "target": "a48118ccc04543edb10e36815edc98c0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    \n    \n    if(vaVars.incorrectManagerInput &lt; 3)\n    return false;\n    else\n    return true;\n})()\n"
+          },
+          "label": "more than 3"
+        },
+        {
+          "id": "aa2f62cfb1e84e799e8791a6ebe78699",
+          "edgeType": "Branch",
+          "source": "9ec4418775ce4850b0ce94c3c27a9227",
+          "target": "28c3278aaa2a484d99446564bce4e489",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "mode": "script",
+            "value": "(function execute() {\n    \n    if(vaVars.incorrectManagerInput &lt; 3)\n\n    return true;\n\n    else\n    return false;\n})()\n"
+          },
+          "label": "less than 3"
+        },
+        {
+          "id": "e32da78d4d1949dfa452466ccea55c9b",
+          "edgeType": "Edge",
+          "source": "28c3278aaa2a484d99446564bce4e489",
+          "target": "7a14184af92940138d93f7ee6e553a47",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ed10fd7da2ee42608df184b780940609",
+          "edgeType": "Edge",
+          "source": "7a14184af92940138d93f7ee6e553a47",
+          "target": "f02779c653d24e8ca8b00bdb769e8d48",
+          "sourcePort": "",
+          "targetPort": ""
         }
       ]
     }
@@ -1852,6 +2078,72 @@
         }
       ],
       "category": "vaInputs"
+    },
+    "a5b19bf6f09c4cc6b628796e9f6890b4": {
+      "id": "a5b19bf6f09c4cc6b628796e9f6890b4",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "incorrectEmailInput",
+      "label": "incorrectEmailInput",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "cc722343b5514c139864ad402a809105": {
+      "id": "cc722343b5514c139864ad402a809105",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "stringValue",
+      "label": "stringValue",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "1a2c5597242648ceb30913715e058d9c": {
+      "id": "1a2c5597242648ceb30913715e058d9c",
+      "value": {
+        "mode": "simple",
+        "value": "3"
+      },
+      "name": "attempt",
+      "label": "attempt",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "44104c32470245ae85d214ce2e0300fa": {
+      "id": "44104c32470245ae85d214ce2e0300fa",
+      "value": {
+        "mode": "simple",
+        "value": "3"
+      },
+      "name": "attempt2",
+      "label": "attempt2",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "b0fc3dd332fb4569aabad8566ae67cab": {
+      "id": "b0fc3dd332fb4569aabad8566ae67cab",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "incorrectManagerInput",
+      "label": "incorrectManagerInput",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "2c6a747d5e6d44ab83f2194528570872": {
+      "id": "2c6a747d5e6d44ab83f2194528570872",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "stringValue2",
+      "label": "stringValue2",
+      "varType": "script",
+      "category": "vaVars"
     }
   }
 }</graph>
@@ -1871,14 +2163,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>134</sys_mod_count>
         <sys_name>Windows Account Unlock/Password Reset</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-05 09:12:25</sys_updated_on>
+        <sys_updated_on>2021-08-05 14:19:41</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
