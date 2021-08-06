@@ -39,7 +39,7 @@
         <limit/>
         <mandatory>false</mandatory>
         <max_length>32</max_length>
-        <model display_value="hello">d1189e352f413010c2c7837cf699b663</model>
+        <model display_value="Incident">d1189e352f413010c2c7837cf699b663</model>
         <model_id>d1189e352f413010c2c7837cf699b663</model_id>
         <model_table/>
         <name>var__m_topic_variable_d1189e352f413010c2c7837cf699b663</name>

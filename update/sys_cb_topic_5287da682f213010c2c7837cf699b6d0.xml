@@ -201,17 +201,82 @@
             "mode": "glide_query",
             "value": ""
           }
+        },
+        "22e6aba42ab043cfa3348c9cb2b85abd": {
+          "id": "22e6aba42ab043cfa3348c9cb2b85abd",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "d787b4996cba473f8216a3e38cf70224": {
+          "id": "d787b4996cba473f8216a3e38cf70224",
+          "stepType": "Prompt",
+          "name": "lol",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "lol"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "7ae08c3d77df4500bd1c0c3e985f0d62",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          }
+        },
+        "39c5f07a94224f80971b5a409550a5f8": {
+          "id": "39c5f07a94224f80971b5a409550a5f8",
+          "stepType": "TextOutput",
+          "name": "fek",
+          "secure": false,
+          "value": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "fek"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
         }
       },
       "edges": [
-        {
-          "id": "d58c02f23e934c0d97f6fcf68a666f5b",
-          "edgeType": "Edge",
-          "source": "0cf39989c87b43bdbc7455b5f95f3917",
-          "target": "6b05220c106e4b389ac20ecb79a2ea1f",
-          "sourcePort": "",
-          "targetPort": ""
-        },
         {
           "id": "2d1155e81c5544e7921f9885c4af078a",
           "edgeType": "Edge",
@@ -237,10 +302,60 @@
           "targetPort": ""
         },
         {
+          "id": "bd092659d3a24da198c71a5b37549532",
+          "edgeType": "Branch",
+          "source": "22e6aba42ab043cfa3348c9cb2b85abd",
+          "target": "9e7c5929eaaf449ea5ca493955169845",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.caller={{vaVars.company}}",
+            "mode": "query"
+          },
+          "label": "Always"
+        },
+        {
+          "id": "e3d0f0897cfb4603a8a7b08dde66095d",
+          "edgeType": "Branch",
+          "source": "22e6aba42ab043cfa3348c9cb2b85abd",
+          "target": "6b05220c106e4b389ac20ecb79a2ea1f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.lol={{vaInputs.lol}}",
+            "mode": "query"
+          },
+          "label": "Always"
+        },
+        {
           "id": "91d47078a649492ab9b44681428eafbf",
           "edgeType": "Edge",
           "source": "bb823b984b774aa58b33349920ff5102",
-          "target": "9e7c5929eaaf449ea5ca493955169845",
+          "target": "d787b4996cba473f8216a3e38cf70224",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8abfe8ddd87b408e9a39571da3accd77",
+          "edgeType": "Edge",
+          "source": "d787b4996cba473f8216a3e38cf70224",
+          "target": "22e6aba42ab043cfa3348c9cb2b85abd",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d58c02f23e934c0d97f6fcf68a666f5b",
+          "edgeType": "Edge",
+          "source": "0cf39989c87b43bdbc7455b5f95f3917",
+          "target": "39c5f07a94224f80971b5a409550a5f8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "874ec309f4de48aa9b15ecd1431a4df5",
+          "edgeType": "Edge",
+          "source": "39c5f07a94224f80971b5a409550a5f8",
+          "target": "6b05220c106e4b389ac20ecb79a2ea1f",
           "sourcePort": "",
           "targetPort": ""
         }
@@ -493,6 +608,19 @@
       "table": "incident",
       "inactive": false,
       "category": "vaInputs"
+    },
+    "7ae08c3d77df4500bd1c0c3e985f0d62": {
+      "id": "7ae08c3d77df4500bd1c0c3e985f0d62",
+      "name": "lol",
+      "label": "Lol",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTYyODI0Mzg1MzU4NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      }
     }
   }
 }</graph>
@@ -512,14 +640,14 @@
         <sys_created_on>2021-07-21 13:25:07</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>5287da682f213010c2c7837cf699b6d0</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>Create INC</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_5287da682f213010c2c7837cf699b6d0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-05 07:57:38</sys_updated_on>
+        <sys_updated_on>2021-08-06 09:58:22</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>TOPIC_BLOCK</type>
         <variables/>
