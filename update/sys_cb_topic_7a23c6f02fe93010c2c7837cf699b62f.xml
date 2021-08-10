@@ -454,7 +454,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Once your manager receives your password, they can the provide it to you."
+                    "text": "Once your manager receives your password, they can then provide it to you."
                   }
                 ]
               }
@@ -743,7 +743,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Make sure you are connected to the VPN at the windows log on screen and then reattempt your password."
+                    "text": "If you are working remotely, make sure you are connected to the VPN at the windows log on screen and then reattempt your password."
                   }
                 ]
               }
@@ -908,6 +908,95 @@
             "value": "",
             "mode": "query"
           }
+        },
+        "f1e92844f039448287994a89676d19e5": {
+          "id": "f1e92844f039448287994a89676d19e5",
+          "stepType": "RecordOutput",
+          "name": "connect to network",
+          "variableId": "",
+          "cardTemplate": "Large image with text",
+          "cardFields": {
+            "1c617fa17313101081e06502edf6a780_title": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "How to connect to the VPN"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "1c617fa17313101081e06502edf6a780_description": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "To connect to the VPN, hit CTRL ALT DEL on your keyboard and then click the \"Network sign-in\" icon in the bottom left of the screen. You will then be prompted to sign in with your work account."
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            },
+            "1c617fa17313101081e06502edf6a780_image": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "https://i.imgur.com/ovrzlQi.png"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple"
+            }
+          },
+          "mode": "variable",
+          "tableName": "",
+          "fields": [],
+          "cardDefinition": {
+            "sys_id": "1c617fa17313101081e06502edf6a780",
+            "name": "Large image with text",
+            "thumbnail.name": "Large image with text.svg",
+            "fields": [
+              {
+                "label": "Title",
+                "position": "1",
+                "mandatory": true,
+                "name": "title",
+                "id": "1c617fa17313101081e06502edf6a780_title"
+              },
+              {
+                "label": "Description",
+                "position": "2",
+                "mandatory": false,
+                "name": "description",
+                "id": "1c617fa17313101081e06502edf6a780_description"
+              },
+              {
+                "label": "Image URL Link",
+                "position": "3",
+                "mandatory": true,
+                "name": "image",
+                "id": "1c617fa17313101081e06502edf6a780_image"
+              }
+            ],
+            "value": "Large image with text",
+            "hasTemplateError": false
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": ""
+          }
         }
       },
       "edges": [
@@ -918,6 +1007,19 @@
           "target": "aff54d95bcbe48d1bcf995dd7810f64f",
           "sourcePort": "",
           "targetPort": ""
+        },
+        {
+          "id": "cf80094d4606475b8011a86d896e1728",
+          "edgeType": "Branch",
+          "source": "8e8057dd160c4072a96cec6352160775",
+          "target": "3911854b7520416284f1a3ae0cf9c39b",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.look_up_userISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "true"
         },
         {
           "id": "f155d06512e94d84adfa9b740b3f95a1",
@@ -1133,19 +1235,6 @@
           "targetPort": ""
         },
         {
-          "id": "cf80094d4606475b8011a86d896e1728",
-          "edgeType": "Branch",
-          "source": "8e8057dd160c4072a96cec6352160775",
-          "target": "3911854b7520416284f1a3ae0cf9c39b",
-          "sourcePort": "",
-          "targetPort": "",
-          "expression": {
-            "value": "vaInputs.look_up_userISNOTEMPTY",
-            "mode": "query"
-          },
-          "label": "true"
-        },
-        {
           "id": "8312158b69ee43a4b33c4767463421ea",
           "edgeType": "Edge",
           "source": "25022b14aec34f11aba0ad1cadc235f4",
@@ -1314,14 +1403,6 @@
           "label": "no"
         },
         {
-          "id": "19f6c47ca67b4f7ab0d765b841100c18",
-          "edgeType": "Edge",
-          "source": "6738ac3fd17a4092b9244cdcf4992e9f",
-          "target": "02de297b5c50443eb4c02c2648a86d59",
-          "sourcePort": "",
-          "targetPort": ""
-        },
-        {
           "id": "90dcfe26a37d4cdc91f578cbe3fb9002",
           "edgeType": "Edge",
           "source": "02de297b5c50443eb4c02c2648a86d59",
@@ -1460,6 +1541,22 @@
           "edgeType": "Edge",
           "source": "7a14184af92940138d93f7ee6e553a47",
           "target": "f02779c653d24e8ca8b00bdb769e8d48",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "19f6c47ca67b4f7ab0d765b841100c18",
+          "edgeType": "Edge",
+          "source": "6738ac3fd17a4092b9244cdcf4992e9f",
+          "target": "f1e92844f039448287994a89676d19e5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7004cffdf73044e69de9fc6f21ffb4df",
+          "edgeType": "Edge",
+          "source": "f1e92844f039448287994a89676d19e5",
+          "target": "02de297b5c50443eb4c02c2648a86d59",
           "sourcePort": "",
           "targetPort": ""
         }
@@ -1668,14 +1765,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>137</sys_mod_count>
+        <sys_mod_count>150</sys_mod_count>
         <sys_name>Windows Account Unlock/Password Reset</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-06 10:27:36</sys_updated_on>
+        <sys_updated_on>2021-08-10 13:09:53</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
