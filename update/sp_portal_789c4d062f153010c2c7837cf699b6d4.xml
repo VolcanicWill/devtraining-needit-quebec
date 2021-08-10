@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
     <sp_portal action="INSERT_OR_UPDATE">
-        <css_variables/>
+        <css_variables>$brand-primary:#428bca;
+$body-bg:#f0f3f4;
+$state-success-text:#5cb85c;
+$sp-homepage-bg:#fff;
+$sp-navbar-divider-color:#455464;
+$text-color:#ff0000;
+$sp-logo-margin-y:.5rem;
+$navbar-inverse-link-hover-color:#ffffff;
+$panel-bg:#fff;
+$brand-success:#5cb85c;
+$navbar-inverse-bg:#3a3f51;
+$brand-warning:#f0ad4e;
+$brand-danger:#d9534f;
+$sp-tagline-color:#717171;
+$navbar-inverse-link-color:#bdc0c4;
+$brand-info:#5bc0de;
+$link-color:#428bca;
+$sp-logo-margin-x:15px;
+$btn-default-bg:#fff;
+$text-muted:#ff0000;
+</css_variables>
         <default>false</default>
         <enable_ais>false</enable_ais>
         <hide_portal_name>false</hide_portal_name>
-        <homepage display_value="index">46cc384147532100ba13a5554ee49009</homepage>
+        <homepage display_value="nm_index">d35e01352f753010c2c7837cf699b6ad</homepage>
         <icon>af3d414e2f153010c2c7837cf699b626</icon>
         <kb_knowledge_base/>
         <kb_knowledge_page display_value="kb_view2">26c2e030d7201200a9addd173e24d437</kb_knowledge_page>
@@ -23,14 +43,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-07-13 13:35:57</sys_created_on>
         <sys_id>789c4d062f153010c2c7837cf699b6d4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>NeedIt Portal</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sp_portal_789c4d062f153010c2c7837cf699b6d4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-07-13 13:35:57</sys_updated_on>
+        <sys_updated_on>2021-08-09 14:36:08</sys_updated_on>
         <theme display_value="Stock">79315153cb33310000f8d856634c9c4b</theme>
         <title>NeedIt Portal</title>
         <ts_index_group/>
