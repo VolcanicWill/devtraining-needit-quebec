@@ -243,7 +243,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Sorry, that email address does not  appear to be in the organisation."
+                    "text": "Sorry, these details do not match our records."
                   }
                 ]
               }
@@ -477,7 +477,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "The system was unable verify your line manager."
+                    "text": "Sorry, these details do not match our records."
                   }
                 ]
               }
@@ -743,7 +743,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "If you are working remotely, make sure you are connected to the VPN at the windows log on screen and then reattempt your password."
+                    "text": "If you are working remotely, make sure you are connected to the VPN at the Windows login screen and then re-attempt your password."
                   }
                 ]
               }
@@ -799,22 +799,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Let's try again. You have "
-                  },
-                  {
-                    "type": "datapill",
-                    "dataPill": {
-                      "value": "{{vaVars.stringValue}}",
-                      "displayValue": "Script Variables➛stringValue"
-                    },
-                    "children": [
-                      {
-                        "text": ""
-                      }
-                    ]
-                  },
-                  {
-                    "text": " attempts left."
+                    "text": "Let's try again."
                   }
                 ]
               }
@@ -882,22 +867,7 @@
                 "type": "paragraph",
                 "children": [
                   {
-                    "text": "Let's try again. You have "
-                  },
-                  {
-                    "type": "datapill",
-                    "dataPill": {
-                      "value": "{{vaVars.stringValue2}}",
-                      "displayValue": "Script Variables➛stringValue2"
-                    },
-                    "children": [
-                      {
-                        "text": ""
-                      }
-                    ]
-                  },
-                  {
-                    "text": " attempts left."
+                    "text": "Let's try again."
                   }
                 ]
               }
@@ -922,7 +892,7 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "How to connect to the VPN"
+                      "text": "VPN Guidance"
                     }
                   ]
                 }
@@ -935,7 +905,39 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "To connect to the VPN, hit CTRL ALT DEL on your keyboard and then click the \"Network sign-in\" icon in the bottom left of the screen. You will then be prompted to sign in with your work account."
+                      "text": "&lt;ul&gt;"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "&lt;li&gt;To connect to the VPN &gt; Press &lt;strong&gt;CTRL+ALT+DEL &lt;/strong&gt;on your keyboard.&lt;/li&gt;"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "&lt;li&gt;&lt;strong&gt;Click&lt;/strong&gt; the &lt;strong&gt;Network sign-in&lt;/strong&gt; icon in the bottom left of the screen. &lt;/li&gt;"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "&lt;/ul&gt;"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "You will then be prompted to Sign-in with your work account."
                     }
                   ]
                 }
@@ -1025,12 +1027,12 @@
           "id": "f155d06512e94d84adfa9b740b3f95a1",
           "edgeType": "Branch",
           "source": "6933bed5ed1248ee94ceeff57107f20c",
-          "target": "25022b14aec34f11aba0ad1cadc235f4",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
           "sourcePort": "",
           "targetPort": "",
           "expression": {
             "mode": "script",
-            "value": "(function execute() {\n    \n    \n    if(vaVars.incorrectEmailInput &lt; 3)\n    return false;\n    else\n    return true;\n})()\n"
+            "value": "(function execute() {\n    \n    \n    if(vaVars.incorrectEmailInput &lt; 2)\n    return false;\n    else\n    return true;\n})()\n"
           },
           "label": "attempts more than 3"
         },
@@ -1458,7 +1460,7 @@
           "targetPort": "",
           "expression": {
             "mode": "script",
-            "value": "(function execute() {\n    \n    if(vaVars.incorrectEmailInput &lt; 3)\n\n    return true;\n\n    else\n    return false;\n})()\n"
+            "value": "(function execute() {\n    \n    if(vaVars.incorrectEmailInput &lt; 2)\n\n    return true;\n\n    else\n    return false;\n})()\n"
           },
           "label": "attempts less than 3"
         },
@@ -1506,12 +1508,12 @@
           "id": "5c14717643a84739aeb2df1713b63e43",
           "edgeType": "Branch",
           "source": "9ec4418775ce4850b0ce94c3c27a9227",
-          "target": "25022b14aec34f11aba0ad1cadc235f4",
+          "target": "ccef4a3b76b14e979cf088fa5e9adaf0",
           "sourcePort": "",
           "targetPort": "",
           "expression": {
             "mode": "script",
-            "value": "(function execute() {\n    \n    \n    if(vaVars.incorrectManagerInput &lt; 3)\n    return false;\n    else\n    return true;\n})()\n"
+            "value": "(function execute() {\n    \n    \n    if(vaVars.incorrectManagerInput &lt; 2)\n    return false;\n    else\n    return true;\n})()\n"
           },
           "label": "more than 3"
         },
@@ -1524,7 +1526,7 @@
           "targetPort": "",
           "expression": {
             "mode": "script",
-            "value": "(function execute() {\n    \n    if(vaVars.incorrectManagerInput &lt; 3)\n\n    return true;\n\n    else\n    return false;\n})()\n"
+            "value": "(function execute() {\n    \n    if(vaVars.incorrectManagerInput &lt; 2)\n\n    return true;\n\n    else\n    return false;\n})()\n"
           },
           "label": "less than 3"
         },
@@ -1553,7 +1555,7 @@
           "targetPort": ""
         },
         {
-          "id": "7004cffdf73044e69de9fc6f21ffb4df",
+          "id": "fed732d943a24f77b198e51021edc7db",
           "edgeType": "Edge",
           "source": "f1e92844f039448287994a89676d19e5",
           "target": "02de297b5c50443eb4c02c2648a86d59",
@@ -1765,14 +1767,14 @@
         <sys_created_on>2021-07-22 06:34:37</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>7a23c6f02fe93010c2c7837cf699b62f</sys_id>
-        <sys_mod_count>150</sys_mod_count>
+        <sys_mod_count>164</sys_mod_count>
         <sys_name>Windows Account Unlock/Password Reset</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_cb_topic_7a23c6f02fe93010c2c7837cf699b62f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-08-10 13:09:53</sys_updated_on>
+        <sys_updated_on>2021-08-12 10:33:31</sys_updated_on>
         <triggerable_by_notification>false</triggerable_by_notification>
         <type>STANDARD</type>
         <variables/>
